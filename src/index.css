@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Lora:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #030C1B;
+  --color-accent-orange: #FF4E00;
+  --color-accent-blue: #00A3FF;
+  --color-neutral-light: #F5F8FC;
+  --color-text-primary: #070E1A;
+  --color-text-secondary: #475569;
+
+  --font-sans: "Lora", Georgia, serif;
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@utility rounded-organic-1 {
+  border-radius: 42px 18px 48px 24px;
+}
+
+@utility rounded-organic-2 {
+  border-radius: 24px 48px 20px 42px;
+}
+
+@utility rounded-organic-3 {
+  border-radius: 36px 20px 42px 30px;
+}
+
+@utility bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(10, 22, 40, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(10, 22, 40, 0.03) 1px, transparent 1px);
+}
+
+@utility bg-grid-accent {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(232, 99, 26, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(232, 99, 26, 0.04) 1px, transparent 1px);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  background-color: #FFFFFF;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Scroll Animation Transitions */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

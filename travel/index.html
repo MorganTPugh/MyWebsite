@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bespoke Travel Curation | Morgan Pugh</title>
+    <meta name="description" content="Custom-curated, stress-free international travel itineraries mapped with operational precision." />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Lora:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Shared Stylesheet via Vite -->
+    <link rel="stylesheet" href="/src/index.css" />
+  </head>
+  <body class="bg-white text-text-primary selection:bg-accent-orange/10 selection:text-accent-orange font-sans antialiased">
+    
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100/80">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+        <a href="/" class="group flex items-center space-x-2">
+          <span class="font-serif font-black text-xl md:text-2xl tracking-tight text-primary">
+            morgan<span class="text-accent-orange italic font-serif font-semibold">.travel</span>
+          </span>
+        </a>
+        
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="/" class="font-sans text-sm font-medium text-text-secondary hover:text-accent-orange transition-colors">Home Hub</a>
+          <a href="#process" class="font-sans text-sm font-medium text-text-secondary hover:text-accent-orange transition-colors">The Process</a>
+          <a href="#portfolio" class="font-sans text-sm font-medium text-text-secondary hover:text-accent-orange transition-colors">Trips Planned</a>
+          <a href="#intake" class="font-sans text-sm font-medium text-primary hover:text-accent-orange transition-colors">Plan My Trip</a>
+        </nav>
+
+        <div>
+          <a href="#intake" class="font-serif font-bold text-xs bg-primary text-white hover:bg-accent-orange px-5 py-2.5 rounded-xl transition-all shadow-md">
+            Start Curation
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[85vh] flex items-center text-white overflow-hidden pt-32 pb-24">
+      <!-- High-end dark background with an Unsplash travel overlay -->
+      <div class="absolute inset-0 bg-primary z-0">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=1600" alt="Ocean coast backdrop" class="w-full h-full object-cover opacity-15 filter grayscale hover:scale-105 transition-transform duration-[10000ms]" referrerPolicy="no-referrer" />
+        <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-primary/45" />
+      </div>
+      <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+
+      <div class="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-8 space-y-8">
+          <div class="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full">
+            <span class="w-2 h-2 rounded-full bg-accent-orange"></span>
+            <span class="font-mono text-[10px] font-bold text-accent-blue tracking-widest uppercase">
+              BESPOKE TRAVEL CURATION · 37+ COUNTRIES EXPLORED
+            </span>
+          </div>
+
+          <h1 class="text-4xl md:text-6xl font-serif font-extrabold leading-[1.12] tracking-tight max-w-4xl">
+            Custom adventures, <span class="text-accent-orange italic font-serif font-semibold">flawlessly structured.</span>
+          </h1>
+
+          <p class="font-sans text-base md:text-lg text-white/70 max-w-2xl leading-relaxed">
+            I obsessive-research destinations, hand-select accommodations, and map out day-by-day itineraries so you can explore the world stress-free. From group trips to remote retreats, your travel playbook comes complete with transit backups and vetted hidden gems.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+            <a href="#process" class="bg-accent-orange text-white text-center font-serif font-bold px-8 py-4 rounded-xl shadow-lg hover:bg-accent-orange/90 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+              <span>See My Process</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+            </a>
+            <a href="#intake" class="bg-white/5 hover:bg-white/10 text-white text-center font-serif font-bold px-8 py-4 rounded-xl border border-white/10 transition-all">
+              Fill Intake Form
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Process Section (Scout, Curation, Departure) -->
+    <section id="process" class="py-24 bg-white relative">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-20 reveal-on-scroll">
+          <span class="font-mono text-xs font-bold text-accent-orange tracking-widest uppercase">METHODOLOGY</span>
+          <h2 class="text-3xl md:text-5xl font-serif font-extrabold text-primary tracking-tight">
+            My Curation <span class="text-accent-blue italic font-serif font-semibold">Blueprint.</span>
+          </h2>
+          <p class="font-sans text-text-secondary text-sm md:text-base leading-relaxed">
+            Travel should feel like a story unfolding. I handle the heavy operational lifting so you only have to focus on showing up.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-on-scroll">
+          
+          <!-- Step 1: Scout -->
+          <div class="border border-gray-100 p-8 rounded-3xl bg-neutral-light/30 space-y-4 flex flex-col justify-between">
+            <div class="space-y-4">
+              <span class="font-mono text-[10px] font-bold text-accent-orange uppercase tracking-wider bg-accent-orange/5 px-3 py-1 rounded-full">STEP 01</span>
+              <h3 class="font-serif font-extrabold text-2xl text-primary">Scout</h3>
+              <p class="font-sans text-sm text-text-secondary leading-relaxed">
+                Intensive local vetting. I analyze geographic transit patterns, evaluate boutique stays, connect with trusted local operators, and discover the culinary secrets that don't make it to popular tourism boards.
+              </p>
+            </div>
+            <div class="pt-6 border-t border-gray-200/50 flex items-center text-xs font-mono font-bold text-primary">
+              Vetting, Transit Audits & Local Discovery
+            </div>
+          </div>
+
+          <!-- Step 2: Curation -->
+          <div class="border border-gray-100 p-8 rounded-3xl bg-neutral-light/30 space-y-4 flex flex-col justify-between">
+            <div class="space-y-4">
+              <span class="font-mono text-[10px] font-bold text-accent-blue uppercase tracking-wider bg-accent-blue/5 px-3 py-1 rounded-full">STEP 02</span>
+              <h3 class="font-serif font-extrabold text-2xl text-primary">Curation</h3>
+              <p class="font-sans text-sm text-text-secondary leading-relaxed">
+                Assembling the day-by-day flow. I calibrate active adventures with necessary breathing room, group dining reservations, custom transit tickets, and specific hour-by-hour routing matching your group's stamina.
+              </p>
+            </div>
+            <div class="pt-6 border-t border-gray-200/50 flex items-center text-xs font-mono font-bold text-primary">
+              Bespoke Timelines & Room to Breathe
+            </div>
+          </div>
+
+          <!-- Step 3: Departure -->
+          <div class="border border-gray-100 p-8 rounded-3xl bg-neutral-light/30 space-y-4 flex flex-col justify-between">
+            <div class="space-y-4">
+              <span class="font-mono text-[10px] font-bold text-accent-orange uppercase tracking-wider bg-accent-orange/5 px-3 py-1 rounded-full">STEP 03</span>
+              <h3 class="font-serif font-extrabold text-2xl text-primary">Departure</h3>
+              <p class="font-sans text-sm text-text-secondary leading-relaxed">
+                Delivering your travel bible. You receive an integrated, offline-accessible digital itinerary containing every voucher, backup connection, localized currency guide, and rainy-day contingency option.
+              </p>
+            </div>
+            <div class="pt-6 border-t border-gray-200/50 flex items-center text-xs font-mono font-bold text-primary">
+              Unified Playbooks & Active Backup Options
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Trips Pulled Off Section -->
+    <section id="portfolio" class="py-24 bg-neutral-light/40 border-y border-gray-100/80">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-20 reveal-on-scroll">
+          <span class="font-mono text-xs font-bold text-accent-orange tracking-widest uppercase">PAST ADVENTURES</span>
+          <h2 class="text-3xl md:text-5xl font-serif font-extrabold text-primary tracking-tight">
+            Trips <span class="text-accent-orange italic font-serif font-semibold">Pulled Off.</span>
+          </h2>
+          <p class="font-sans text-text-secondary text-sm md:text-base leading-relaxed">
+            A small look at complex, highly praised itineraries built and executed across the globe.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-on-scroll">
+          
+          <!-- Trip 1 -->
+          <div class="group bg-white rounded-3xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all">
+            <div class="aspect-video overflow-hidden bg-primary relative">
+              <img src="https://images.unsplash.com/photo-1509840144524-f6790bc57f4b?auto=format&fit=crop&q=80&w=800" alt="Seaside Lisbon tram" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+              <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
+              <span class="absolute bottom-4 left-4 font-mono text-[10px] font-bold text-white bg-accent-orange px-2.5 py-1 rounded-full uppercase">Portugal & Spain</span>
+            </div>
+            <div class="p-6 space-y-3">
+              <h4 class="font-serif font-bold text-lg text-primary">Island Hopping & Historic Rail</h4>
+              <p class="font-sans text-xs text-text-secondary leading-relaxed">
+                Planned a seamless 14-day itinerary across Lisbon, Seville, and coastal islands for a diverse group of 8. Includes private food walks, high-speed rail transfers, and localized historic guides.
+              </p>
+            </div>
+          </div>
+
+          <!-- Trip 2 -->
+          <div class="group bg-white rounded-3xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all">
+            <div class="aspect-video overflow-hidden bg-primary relative">
+              <img src="https://images.unsplash.com/photo-1538681105587-85640e57202c?auto=format&fit=crop&q=80&w=800" alt="Lush Costa Rica Jungle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+              <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
+              <span class="absolute bottom-4 left-4 font-mono text-[10px] font-bold text-white bg-accent-blue px-2.5 py-1 rounded-full uppercase">Costa Rica</span>
+            </div>
+            <div class="p-6 space-y-3">
+              <h4 class="font-serif font-bold text-lg text-primary">10-Day Micro-Wedding Logistics</h4>
+              <p class="font-sans text-xs text-text-secondary leading-relaxed">
+                Designed and coordinated remote jungle logistics, ocean-view villas, private rainforest shuttle transfers, and vendor coordination in a highly secluded corner of Costa Rica for 12 wedding guests.
+              </p>
+            </div>
+          </div>
+
+          <!-- Trip 3 -->
+          <div class="group bg-white rounded-3xl overflow-hidden border border-gray-100 hover:shadow-lg transition-all">
+            <div class="aspect-video overflow-hidden bg-primary relative">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800" alt="Hawaii island" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+              <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
+              <span class="absolute bottom-4 left-4 font-mono text-[10px] font-bold text-white bg-accent-orange px-2.5 py-1 rounded-full uppercase">Hawaii</span>
+            </div>
+            <div class="p-6 space-y-3">
+              <h4 class="font-serif font-bold text-lg text-primary">The Ultimate Ocean & Volcano Retreat</h4>
+              <p class="font-sans text-xs text-text-secondary leading-relaxed">
+                Vetted and custom-mapped local Hawaiian retreats featuring private snorkelling charters, off-grid eco-stays, hiking guides, and comprehensive day-by-day rainy-day contingencies.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-white relative">
+      <div class="max-w-5xl mx-auto px-6 md:px-12">
+        <div class="text-center space-y-4 mb-20 reveal-on-scroll">
+          <span class="font-mono text-xs font-bold text-accent-orange tracking-widest uppercase">TESTIMONIALS</span>
+          <h2 class="text-3xl md:text-5xl font-serif font-extrabold text-primary tracking-tight">
+            Loved by <span class="text-accent-blue italic font-serif font-semibold">Intentional Explorers.</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-on-scroll">
+          <!-- Testimonial 1 -->
+          <div class="p-8 rounded-3xl border border-gray-100 bg-neutral-light/20 flex flex-col justify-between space-y-6">
+            <p class="font-sans text-sm text-text-secondary italic leading-relaxed">
+              "Morgan planned a 10-day trip for 8 of us across Portugal. We had high standards and different pacing needs, but she calibrated everything with total operations excellence."
+            </p>
+            <div class="border-t border-gray-200/50 pt-4 flex items-center justify-between">
+              <span class="font-serif font-bold text-xs text-primary">Liam & Sofia</span>
+              <span class="font-mono text-[10px] text-accent-blue">San Francisco</span>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="p-8 rounded-3xl border border-gray-100 bg-neutral-light/20 flex flex-col justify-between space-y-6">
+            <p class="font-sans text-sm text-text-secondary italic leading-relaxed">
+              "The Costa Rica micro-wedding itinerary was magical. Morgan managed the remote logistics and vendor details with absolute ease. Zero stress for us."
+            </p>
+            <div class="border-t border-gray-200/50 pt-4 flex items-center justify-between">
+              <span class="font-serif font-bold text-xs text-primary">Sarah & Ken</span>
+              <span class="font-mono text-[10px] text-accent-blue">Denver, CO</span>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="p-8 rounded-3xl border border-gray-100 bg-neutral-light/20 flex flex-col justify-between space-y-6">
+            <p class="font-sans text-sm text-text-secondary italic leading-relaxed">
+              "A group of 12 for an island-hopping vacation is usually a nightmare, but with Morgan's day-by-day guides and backup plans, we had the smoothest trip of our lives."
+            </p>
+            <div class="border-t border-gray-200/50 pt-4 flex items-center justify-between">
+              <span class="font-serif font-bold text-xs text-primary">Marcus</span>
+              <span class="font-mono text-[10px] text-accent-blue">Chicago, IL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Travel Intake Form Placeholder (Netlify Embed Spot) -->
+    <section id="intake" class="py-24 bg-primary text-white relative overflow-hidden">
+      <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      
+      <div class="max-w-4xl mx-auto px-6 md:px-12 relative z-10">
+        <div class="text-center space-y-4 mb-16 reveal-on-scroll">
+          <span class="font-mono text-xs font-bold text-accent-orange tracking-widest uppercase">TRAVEL INTAKE</span>
+          <h2 class="text-3xl md:text-5xl font-serif font-extrabold tracking-tight text-white">
+            Begin Your <span class="text-accent-orange italic font-serif font-semibold">Adventure.</span>
+          </h2>
+          <p class="font-sans text-white/70 text-sm md:text-base max-w-xl mx-auto">
+            Fill out the intake details below to get started on your curated itinerary. I'll reach back out to organize our mapping workshop.
+          </p>
+        </div>
+
+        <!-- Netlify Embed Placeholder Area -->
+        <div class="bg-white/5 border border-white/10 p-8 md:p-10 rounded-3xl backdrop-blur-sm shadow-xl max-w-2xl mx-auto reveal-on-scroll">
+          
+          <!-- Netlify form will be embedded directly in this container -->
+          <!-- START NETLIFY FORM PLACEHOLDER -->
+          <div class="border border-dashed border-white/20 p-8 rounded-2xl bg-primary/40 flex flex-col items-center justify-center text-center space-y-6 min-h-[400px]">
+            <div class="w-14 h-14 bg-white/5 text-accent-blue border border-white/10 rounded-full flex items-center justify-center text-2xl font-serif">⚡</div>
+            <div class="space-y-2">
+              <h4 class="font-serif font-bold text-xl text-white">Travel Intake Embed Block</h4>
+              <p class="font-sans text-xs text-white/50 max-w-sm mx-auto">
+                This is a placeholder container. When you are ready to embed your <strong>Netlify Travel Intake Form</strong>, paste your code snippet directly inside this div inside <code class="text-accent-orange bg-black/40 px-1.5 py-0.5 rounded">/travel/index.html</code>.
+              </p>
+            </div>
+            
+            <!-- Standard Fallback Interactive Form Simulator -->
+            <div class="w-full text-left pt-6 border-t border-white/10 space-y-4">
+              <p class="font-sans text-[11px] text-accent-blue uppercase tracking-wider font-bold">Simulator Form Preview:</p>
+              
+              <form id="travel-simulator-form" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block font-sans text-[10px] font-bold text-white/70 uppercase mb-1">Destination of Interest</label>
+                    <input required type="text" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white outline-none focus:border-accent-orange" placeholder="e.g. Portugal" />
+                  </div>
+                  <div>
+                    <label class="block font-sans text-[10px] font-bold text-white/70 uppercase mb-1">Estimated Dates / Duration</label>
+                    <input required type="text" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-xs text-white outline-none focus:border-accent-orange" placeholder="e.g. Oct 2026, 10 days" />
+                  </div>
+                </div>
+                
+                <div>
+                  <label class="block font-sans text-[10px] font-bold text-white/70 uppercase mb-1">Desired Travel Pacing</label>
+                  <select class="w-full bg-white/10 border border-white/10 rounded-lg px-3 py-2 text-xs text-white outline-none">
+                    <option class="bg-primary text-white" value="slow">Slow & Cultured (Linger in coffee shops, single hubs)</option>
+                    <option class="bg-primary text-white" value="moderate">Moderate & Curated (Daily activities, cozy stops)</option>
+                    <option class="bg-primary text-white" value="active">Active Explorer (Hiking, transfers, packed schedules)</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="w-full bg-accent-orange hover:bg-accent-orange/90 text-white font-serif font-bold py-3 rounded-lg text-xs transition-all cursor-pointer">
+                  Submit Mock Travel Intake
+                </button>
+              </form>
+              
+              <div id="sim-success" class="hidden text-center py-4 bg-white/5 border border-white/10 rounded-xl space-y-1">
+                <span class="block text-accent-orange text-sm font-serif font-bold">✓ Intake Form Logged!</span>
+                <span class="block text-[10px] text-white/60">Simulator works perfectly. Ready for Netlify embed code!</span>
+              </div>
+            </div>
+          </div>
+          <!-- END NETLIFY FORM PLACEHOLDER -->
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary border-t border-white/5 text-white/50 py-12">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <p class="font-sans text-xs">
+          &copy; 2026 Morgan Pugh. Custom-curated itineraries made with operations excellence.
+        </p>
+        <div class="flex items-center space-x-6">
+          <a href="/" class="hover:text-white transition-colors text-xs font-mono">Home Hub</a>
+          <a href="/projects/" class="hover:text-white transition-colors text-xs font-mono">Projects</a>
+          <a href="/travel/" class="hover:text-white transition-colors text-xs font-mono">Travel Curation</a>
+          <a href="/money/" class="hover:text-white transition-colors text-xs font-mono">Money Coaching</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Scroll Reveal Animations
+      const revealElements = document.querySelectorAll('.reveal-on-scroll');
+      const revealOnScroll = () => {
+        revealElements.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          const viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+          if (rect.top <= viewHeight * 0.85) {
+            el.classList.add('is-visible');
+          }
+        });
+      };
+      window.addEventListener('scroll', revealOnScroll);
+      window.addEventListener('load', revealOnScroll);
+
+      // Travel Intake Simulator Handler
+      const simForm = document.getElementById('travel-simulator-form');
+      const simSuccess = document.getElementById('sim-success');
+      if (simForm && simSuccess) {
+        simForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          simForm.classList.add('hidden');
+          simSuccess.classList.remove('hidden');
+        });
+      }
+    </script>
+  </body>
+</html>
