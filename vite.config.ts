@@ -17,6 +17,7 @@ export default defineConfig(() => {
           main: path.resolve(__dirname, 'index.html'),
           projects: path.resolve(__dirname, 'projects/index.html'),
           travel: path.resolve(__dirname, 'travel/index.html'),
+          travelCostaRica: path.resolve(__dirname, 'travel/costa-rica/index.html'),
           money: path.resolve(__dirname, 'money/index.html')
         }
       }
