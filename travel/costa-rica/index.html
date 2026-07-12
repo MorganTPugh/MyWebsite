@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>A 10-Day Costa Rica Micro-Wedding | Morgan Pugh Travel Curation</title>
     <meta name="description" content="How a $2,000 shuttle quote turned into a 10-day, 12-guest Costa Rica adventure with a beach wedding stitched into the middle of it — planned start to finish by Morgan Pugh." />
+    <meta property="og:title" content="Pura Vida, I Do: A 10-Day Costa Rica Micro-Wedding" />
+    <meta property="og:description" content="How a $2,000 shuttle quote turned into a 10-day, 12-guest Costa Rica adventure with a beach wedding stitched into the middle of it." />
+    <meta property="og:image" content="/assets/travel/costa-rica/wedding-1.jpg" />
+    <meta property="og:type" content="article" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +17,16 @@
 
     <!-- Shared Stylesheet via Vite -->
     <link rel="stylesheet" href="/src/index.css" />
+
+    <!-- Page-scoped "trip blog" palette: a committed jungle-green world layered onto the shared design system, distinct from the rest of the site's navy/orange/blue -->
+    <style>
+      :root {
+        --trip-forest: #102319;
+        --trip-leaf: #3FA35F;
+        --trip-leaf-light: #8FD1A6;
+        --trip-paper: #F6FAF7;
+      }
+    </style>
   </head>
   <body class="bg-white text-text-primary selection:bg-accent-orange/10 selection:text-accent-orange font-sans antialiased">
 
@@ -41,19 +55,19 @@
     </header>
 
     <!-- Hero -->
-    <section class="relative min-h-[85vh] flex items-end text-white overflow-hidden pt-28 pb-16">
+    <section class="relative min-h-[80vh] flex items-end text-white overflow-hidden pt-28 pb-14">
       <div class="absolute inset-0 bg-primary z-0">
-        <img src="/assets/travel/costa-rica/wedding-1.jpg" alt="Beach wedding ceremony in Punta Uva, Costa Rica" class="w-full h-full object-cover object-[50%_20%] opacity-45" />
+        <img src="/assets/travel/costa-rica/wedding-1.jpg" alt="Beach wedding ceremony in Punta Uva, Costa Rica" class="w-full h-full object-cover object-[50%_20%] opacity-45" fetchpriority="high" />
         <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/65 to-primary/20"></div>
       </div>
 
-      <div class="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10 space-y-6">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10 space-y-5">
         <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-extrabold leading-[1.06] tracking-tight max-w-4xl">
           Pura Vida, I Do: How a Wedding Budget Became <span class="text-accent-orange italic font-serif font-semibold">a 10-Day Costa Rican Adventure.</span>
         </h1>
 
         <p class="font-sans text-base md:text-lg text-white/80 max-w-xl leading-relaxed">
-          Ten days, twelve people, and vows exchanged beneath 700-year-old trees on a Costa Rican beach. Nurse sharks, a surprise mariachi band, and hot springs under a volcano came with it. This is the real trip I planned for my own husband and me — proof of what real planning looks like, at any scale.
+          Ten days, twelve people, and vows exchanged beneath 700-year-old trees on a Costa Rican beach. Nurse sharks, a surprise mariachi band, and hot springs under a volcano came with it.
         </p>
 
         <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
@@ -69,10 +83,10 @@
     </section>
 
     <!-- The Spark -->
-    <section id="story" class="py-14 md:py-20 bg-white relative">
+    <section id="story" class="py-10 md:py-16 bg-white relative">
       <div class="max-w-5xl mx-auto px-6 md:px-12">
-        <h2 class="text-3xl md:text-5xl font-serif font-extrabold text-primary tracking-tight mb-8 reveal-on-scroll">
-          A bus quote broke us: <span class="text-accent-blue italic font-serif font-semibold">$2,000 to move 25 people, twice.</span>
+        <h2 class="text-3xl md:text-5xl font-serif font-extrabold text-primary tracking-tight mb-6 reveal-on-scroll">
+          A bus quote broke us: <span class="text-(--trip-leaf) italic font-serif font-semibold">$2,000 to move 25 people, twice.</span>
         </h2>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center reveal-on-scroll">
@@ -81,35 +95,35 @@
             <p>So we asked what actually mattered: chasing adventure while we're young, staying financially free, and a wedding day that felt romantic instead of like a fire drill. Ten days in Costa Rica, with our people, with a wedding stitched into the middle. Done.</p>
           </div>
           <div class="lg:col-span-6">
-            <img src="/assets/travel/costa-rica/resort-1.jpg" alt="Boutique jungle resort in Puerto Viejo, Costa Rica" class="w-full h-full object-cover rounded-organic-2 shadow-xl rotate-1" />
+            <img src="/assets/travel/costa-rica/resort-1.jpg" alt="Boutique jungle resort in Puerto Viejo, Costa Rica" loading="lazy" decoding="async" class="w-full h-full object-cover rounded-organic-2 shadow-xl rotate-1" />
           </div>
         </div>
 
-        <p class="font-serif text-2xl md:text-3xl font-bold text-primary mt-10 max-w-2xl reveal-on-scroll">
+        <p class="font-serif text-2xl md:text-3xl font-bold text-primary mt-8 max-w-2xl reveal-on-scroll">
           Adventure over ambiance. <span class="text-accent-orange italic">A beach over a ballroom.</span> One perfect day, not one stressful year.
         </p>
       </div>
     </section>
 
     <!-- The Route -->
-    <section id="route" class="py-14 md:py-20 bg-neutral-light/40 border-y border-gray-100/80">
-      <div class="max-w-6xl mx-auto px-6 md:px-12">
-        <div class="max-w-2xl mb-8 reveal-on-scroll">
-          <h2 class="text-3xl md:text-5xl font-serif font-extrabold text-primary tracking-tight mb-3">
-            Jungle lodge, Caribbean coast, <span class="text-accent-orange italic font-serif font-semibold">volcano country.</span>
+    <section id="route" class="py-10 md:py-16 bg-(--trip-forest) text-white relative overflow-hidden">
+      <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+      <div class="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
+        <div class="max-w-2xl mb-6 reveal-on-scroll">
+          <h2 class="text-3xl md:text-5xl font-serif font-extrabold tracking-tight mb-3">
+            Jungle lodge, Caribbean coast, volcano country.
           </h2>
-          <p class="font-sans text-text-secondary text-sm md:text-base leading-relaxed">
+          <p class="font-sans text-white/75 text-sm md:text-base leading-relaxed">
             Rental cars with pre-existing damage. Mountain highways that drop a lane mid-curve with zero warning. We still got twelve people to a beach in Punta Uva exactly on schedule for a 4pm ceremony.
           </p>
         </div>
 
         <!-- Route Map Graphic -->
-        <div class="relative bg-primary rounded-organic-1 border border-white/5 shadow-xl overflow-hidden mb-8 reveal-on-scroll">
-          <div class="absolute inset-0 bg-grid-accent opacity-20"></div>
-          <div class="relative aspect-[11/10] max-w-xl mx-auto">
+        <div class="relative rounded-organic-1 overflow-hidden mb-8 reveal-on-scroll">
+          <div class="relative aspect-[11/10] max-w-lg mx-auto">
             <svg viewBox="-35 -5 1100 1000" class="w-full h-full" preserveAspectRatio="xMidYMid meet">
               <!-- Costa Rica silhouette -->
-              <g transform="translate(0.000000,1024.000000) scale(0.100000,-0.100000)" fill="#00A3FF" fill-opacity="0.12" stroke="#00A3FF" stroke-opacity="0.35" stroke-width="6">
+              <g transform="translate(0.000000,1024.000000) scale(0.100000,-0.100000)" fill="var(--trip-leaf)" fill-opacity="0.16" stroke="var(--trip-leaf)" stroke-opacity="0.45" stroke-width="6">
                 <path d="M1030 9919 c-41 -5 -80 -11 -86 -13 -6 -2 -48 -71 -94 -152 -90 -162
 -87 -145 -26 -189 13 -10 19 -27 20 -57 1 -37 -2 -43 -21 -46 -25 -4 -30 7
 -12 25 18 18 1 50 -38 74 -37 23 -37 23 -63 -22 -5 -10 -29 -20 -55 -23 -40
@@ -239,172 +253,156 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
 
               <!-- Route line -->
               <path d="M560,421 Q605,375 651,339 Q820,400 964,505 Q650,480 394,257 Q500,350 605,470"
-                    fill="none" stroke="#FF4E00" stroke-width="5" stroke-dasharray="14,12" stroke-linecap="round" opacity="0.85" />
+                    fill="none" stroke="#FF4E00" stroke-width="5" stroke-dasharray="14,12" stroke-linecap="round" opacity="0.9" />
 
               <!-- Stop 1: San José touchdown -->
-              <circle cx="560" cy="421" r="22" fill="#00A3FF" stroke="#030C1B" stroke-width="4" />
-              <text x="560" y="430" text-anchor="middle" font-size="22" font-family="JetBrains Mono, monospace" font-weight="700" fill="#030C1B">1</text>
+              <circle cx="560" cy="421" r="22" fill="white" stroke="var(--trip-forest)" stroke-width="4" />
+              <text x="560" y="430" text-anchor="middle" font-size="22" font-family="JetBrains Mono, monospace" font-weight="700" fill="var(--trip-forest)">1</text>
               <!-- Stop 2: Jungle lodge -->
-              <circle cx="651" cy="339" r="22" fill="#FF4E00" stroke="#030C1B" stroke-width="4" />
+              <circle cx="651" cy="339" r="22" fill="#FF4E00" stroke="var(--trip-forest)" stroke-width="4" />
               <text x="651" y="348" text-anchor="middle" font-size="22" font-family="JetBrains Mono, monospace" font-weight="700" fill="white">2</text>
               <!-- Stop 3: Puerto Viejo & Cahuita -->
-              <circle cx="964" cy="505" r="26" fill="#FF4E00" stroke="#030C1B" stroke-width="4" />
+              <circle cx="964" cy="505" r="26" fill="#FF4E00" stroke="var(--trip-forest)" stroke-width="4" />
               <text x="964" y="514" text-anchor="middle" font-size="24" font-family="JetBrains Mono, monospace" font-weight="700" fill="white">3</text>
               <!-- Stop 4: La Fortuna & Arenal -->
-              <circle cx="394" cy="257" r="22" fill="#00A3FF" stroke="#030C1B" stroke-width="4" />
-              <text x="394" y="266" text-anchor="middle" font-size="22" font-family="JetBrains Mono, monospace" font-weight="700" fill="#030C1B">4</text>
+              <circle cx="394" cy="257" r="22" fill="white" stroke="var(--trip-forest)" stroke-width="4" />
+              <text x="394" y="266" text-anchor="middle" font-size="22" font-family="JetBrains Mono, monospace" font-weight="700" fill="var(--trip-forest)">4</text>
               <!-- Stop 5: San José wheels up -->
-              <circle cx="605" cy="470" r="22" fill="#00A3FF" stroke="#030C1B" stroke-width="4" />
-              <text x="605" y="479" text-anchor="middle" font-size="22" font-family="JetBrains Mono, monospace" font-weight="700" fill="#030C1B">5</text>
+              <circle cx="605" cy="470" r="22" fill="white" stroke="var(--trip-forest)" stroke-width="4" />
+              <text x="605" y="479" text-anchor="middle" font-size="22" font-family="JetBrains Mono, monospace" font-weight="700" fill="var(--trip-forest)">5</text>
             </svg>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 reveal-on-scroll">
-          <div class="bg-white p-5 rounded-2xl border border-gray-100 space-y-2">
-            <span class="inline-block text-[11px] font-bold text-white bg-accent-blue px-2.5 py-1 rounded-full">Day 1</span>
-            <h4 class="font-serif font-bold text-primary">San José &mdash; Touchdown</h4>
-            <p class="font-sans text-xs text-text-secondary leading-relaxed">Customs, a chatty rental car agent, and a crash course in Costa Rican driving.</p>
+        <!-- Itinerary timeline (no card chrome — a simple wayfinding strip) -->
+        <div class="flex flex-wrap gap-x-10 gap-y-5 reveal-on-scroll">
+          <div class="flex items-start gap-2.5 max-w-[170px]">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-white shrink-0"></span>
+            <div>
+              <p class="font-mono text-[10px] font-bold text-(--trip-leaf-light) uppercase tracking-wide">Day 1</p>
+              <p class="font-serif font-bold text-white text-sm leading-snug">San José touchdown</p>
+            </div>
           </div>
-          <div class="bg-white p-5 rounded-2xl border border-gray-100 space-y-2">
-            <span class="inline-block text-[11px] font-bold text-white bg-accent-orange px-2.5 py-1 rounded-full">Days 1&ndash;2</span>
-            <h4 class="font-serif font-bold text-primary">Private Rainforest Lodge</h4>
-            <p class="font-sans text-xs text-text-secondary leading-relaxed">A jungle lodge to ourselves and a rainforest walk that humbled everyone.</p>
+          <div class="flex items-start gap-2.5 max-w-[170px]">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-orange shrink-0"></span>
+            <div>
+              <p class="font-mono text-[10px] font-bold text-(--trip-leaf-light) uppercase tracking-wide">Days 1&ndash;2</p>
+              <p class="font-serif font-bold text-white text-sm leading-snug">Private rainforest lodge</p>
+            </div>
           </div>
-          <div class="bg-white p-5 rounded-2xl border border-gray-100 space-y-2 md:ring-2 md:ring-accent-orange/40">
-            <span class="inline-block text-[11px] font-bold text-white bg-accent-orange px-2.5 py-1 rounded-full">Days 3&ndash;7</span>
-            <h4 class="font-serif font-bold text-primary">Puerto Viejo &amp; Cahuita</h4>
-            <p class="font-sans text-xs text-text-secondary leading-relaxed">Sharks, dolphins, a private beach, and the wedding itself.</p>
+          <div class="flex items-start gap-2.5 max-w-[170px]">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-accent-orange shrink-0"></span>
+            <div>
+              <p class="font-mono text-[10px] font-bold text-(--trip-leaf-light) uppercase tracking-wide">Days 3&ndash;7</p>
+              <p class="font-serif font-bold text-white text-sm leading-snug">Puerto Viejo &amp; Cahuita &mdash; the wedding</p>
+            </div>
           </div>
-          <div class="bg-white p-5 rounded-2xl border border-gray-100 space-y-2">
-            <span class="inline-block text-[11px] font-bold text-white bg-accent-blue px-2.5 py-1 rounded-full">Days 7&ndash;9</span>
-            <h4 class="font-serif font-bold text-primary">La Fortuna &amp; Arenal</h4>
-            <p class="font-sans text-xs text-text-secondary leading-relaxed">Hot springs every night and a troop of snack-begging coatis.</p>
+          <div class="flex items-start gap-2.5 max-w-[170px]">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-white shrink-0"></span>
+            <div>
+              <p class="font-mono text-[10px] font-bold text-(--trip-leaf-light) uppercase tracking-wide">Days 7&ndash;9</p>
+              <p class="font-serif font-bold text-white text-sm leading-snug">La Fortuna &amp; Arenal</p>
+            </div>
           </div>
-          <div class="bg-white p-5 rounded-2xl border border-gray-100 space-y-2">
-            <span class="inline-block text-[11px] font-bold text-white bg-accent-blue px-2.5 py-1 rounded-full">Day 10</span>
-            <h4 class="font-serif font-bold text-primary">San José &mdash; Wheels Up</h4>
-            <p class="font-sans text-xs text-text-secondary leading-relaxed">One more mountain drive, home with a lifetime of stories.</p>
+          <div class="flex items-start gap-2.5 max-w-[170px]">
+            <span class="mt-1.5 w-2 h-2 rounded-full bg-white shrink-0"></span>
+            <div>
+              <p class="font-mono text-[10px] font-bold text-(--trip-leaf-light) uppercase tracking-wide">Day 10</p>
+              <p class="font-serif font-bold text-white text-sm leading-snug">San José &mdash; wheels up</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Day by Day -->
-    <section id="days" class="py-14 md:py-20 bg-white relative">
+    <section id="days" class="py-10 md:py-16 bg-white relative">
       <div class="max-w-5xl mx-auto px-6 md:px-12">
-        <h2 class="text-2xl md:text-3xl font-serif font-extrabold text-primary tracking-tight mb-10 reveal-on-scroll">
+        <h2 class="text-2xl md:text-3xl font-serif font-extrabold text-primary tracking-tight mb-8 reveal-on-scroll">
           Before we said &ldquo;I do.&rdquo;
         </h2>
 
-        <div class="space-y-14">
-          <!-- Jungle Lodge -->
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center reveal-on-scroll">
-            <div class="md:col-span-5 order-2 md:order-1">
-              <h3 class="font-serif font-extrabold text-2xl text-primary mb-3">Days 1&ndash;2: 4am Flights and a Jungle Lodge to Ourselves</h3>
-              <p class="font-sans text-text-secondary text-base leading-relaxed">
-                Airport by 4am, then straight into San José's total lack of lane discipline &mdash; everyone arrived rattled and bonded. The reward: a private rainforest lodge, steak dinners, and a morning walk into rainforest so dense it felt like a different planet.
-              </p>
-            </div>
-            <div class="md:col-span-7 order-1 md:order-2">
-              <img src="/assets/travel/costa-rica/local-food.jpg" alt="Long-table dinner at a private jungle lodge in Costa Rica" class="w-full aspect-[4/3] object-cover rounded-organic-3 shadow-lg" />
-            </div>
+        <!-- Feature day -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center mb-10 reveal-on-scroll">
+          <div class="md:col-span-5 order-2 md:order-1">
+            <h3 class="font-serif font-extrabold text-2xl text-primary mb-3">Day 4: Snorkeling with a Nurse Shark</h3>
+            <p class="font-sans text-text-secondary text-base leading-relaxed">
+              Someone spotted &ldquo;a really big fish&rdquo; and our guide swam straight at it to prove there was nothing to fear &mdash; a nurse shark, completely unbothered. The park hike topped it: bats camouflaged on tree bark none of us would've ever spotted alone, plus sloths, monkeys, and iguanas.
+            </p>
           </div>
-
-          <!-- Caribbean Coast -->
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center reveal-on-scroll">
-            <div class="md:col-span-7">
-              <img src="/assets/travel/costa-rica/resort-2.jpg" alt="Boutique resort entrance in Puerto Viejo, Costa Rica" class="w-full aspect-[4/3] object-cover rounded-organic-1 shadow-lg -rotate-1" />
-            </div>
-            <div class="md:col-span-5">
-              <h3 class="font-serif font-extrabold text-2xl text-primary mb-3">Day 3: Black Sand, Turquoise Water, Argentinian Steak</h3>
-              <p class="font-sans text-text-secondary text-base leading-relaxed">
-                The whole group gasped at check-in. While rooms got ready, half of us scouted a beach in the rain and the other half found tacos. Dinner was a candlelit Argentinian spot off the main road &mdash; the kind you only find by doing the homework first.
-              </p>
-            </div>
+          <div class="md:col-span-7 order-1 md:order-2 grid grid-cols-2 gap-3">
+            <img src="/assets/travel/costa-rica/cahuita-snorkeling.jpg" alt="Snorkeling boat tour at Cahuita National Park, Costa Rica" loading="lazy" decoding="async" class="w-full aspect-[3/4] object-cover rounded-organic-2 shadow-lg" />
+            <img src="/assets/travel/costa-rica/sloth.jpg" alt="Sloth spotted on a rainforest hike in Cahuita National Park" loading="lazy" decoding="async" class="w-full aspect-[3/4] object-cover rounded-organic-2 shadow-lg mt-6 rotate-1" />
           </div>
+        </div>
 
-          <!-- Snorkeling -->
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center reveal-on-scroll">
-            <div class="md:col-span-5 order-2 md:order-1">
-              <h3 class="font-serif font-extrabold text-2xl text-primary mb-3">Day 4: Snorkeling with a Nurse Shark</h3>
-              <p class="font-sans text-text-secondary text-base leading-relaxed">
-                Someone spotted &ldquo;a really big fish&rdquo; and our guide swam straight at it to prove there was nothing to fear &mdash; a nurse shark, completely unbothered. The park hike topped it: bats camouflaged on tree bark none of us would've ever spotted alone, plus sloths, monkeys, and iguanas.
-              </p>
-            </div>
-            <div class="md:col-span-7 order-1 md:order-2 grid grid-cols-2 gap-3">
-              <img src="/assets/travel/costa-rica/cahuita-snorkeling.jpg" alt="Snorkeling boat tour at Cahuita National Park, Costa Rica" class="w-full aspect-[3/4] object-cover rounded-organic-2 shadow-lg" />
-              <img src="/assets/travel/costa-rica/sloth.jpg" alt="Sloth spotted on a rainforest hike in Cahuita National Park" class="w-full aspect-[3/4] object-cover rounded-organic-2 shadow-lg mt-6 rotate-1" />
-            </div>
+        <!-- Compact trio -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-on-scroll">
+          <div class="space-y-3">
+            <img src="/assets/travel/costa-rica/local-food.jpg" alt="Long-table dinner at a private jungle lodge in Costa Rica" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover rounded-organic-3 shadow-md" />
+            <h3 class="font-serif font-bold text-lg text-primary">Days 1&ndash;2 &mdash; Jungle Lodge</h3>
+            <p class="font-sans text-text-secondary text-sm leading-relaxed">4am flights, chaotic San José driving, then a private rainforest lodge all to ourselves.</p>
           </div>
-
-          <!-- Dolphins + finding the spot -->
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center reveal-on-scroll">
-            <div class="md:col-span-7 grid grid-cols-2 gap-3">
-              <img src="/assets/travel/costa-rica/remote-beach-1.jpg" alt="Private remote beach near Manzanillo National Wildlife Refuge" class="w-full aspect-[3/4] object-cover rounded-organic-3 shadow-lg -rotate-1" />
-              <img src="/assets/travel/costa-rica/beach-swing.jpg" alt="Beach swing on a remote stretch of Costa Rica coastline" class="w-full aspect-[3/4] object-cover rounded-organic-3 shadow-lg mt-6" />
-            </div>
-            <div class="md:col-span-5">
-              <h3 class="font-serif font-extrabold text-2xl text-primary mb-3">Day 5: Dolphins, a Private Beach, and Finding &ldquo;The Spot&rdquo;</h3>
-              <p class="font-sans text-text-secondary text-base leading-relaxed">
-                A wild dolphin pod surfaced next to the boat and stayed a while. Then a walk to a beach so remote we had it entirely to ourselves. On a whim that afternoon, we turned down an unmarked road toward Punta Uva &mdash; and knew in thirty seconds we'd found the ceremony site.
-              </p>
-            </div>
+          <div class="space-y-3">
+            <img src="/assets/travel/costa-rica/resort-2.jpg" alt="Boutique resort entrance in Puerto Viejo, Costa Rica" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover rounded-organic-1 shadow-md" />
+            <h3 class="font-serif font-bold text-lg text-primary">Day 3 &mdash; Caribbean Coast</h3>
+            <p class="font-sans text-text-secondary text-sm leading-relaxed">Black sand, turquoise water, and a candlelit Argentinian dinner off the main road.</p>
+          </div>
+          <div class="space-y-3">
+            <img src="/assets/travel/costa-rica/remote-beach-1.jpg" alt="Private remote beach near Manzanillo National Wildlife Refuge" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover rounded-organic-2 shadow-md" />
+            <h3 class="font-serif font-bold text-lg text-primary">Day 5 &mdash; Finding &ldquo;the Spot&rdquo;</h3>
+            <p class="font-sans text-text-secondary text-sm leading-relaxed">A wild dolphin pod, a beach entirely to ourselves, and stumbling onto our ceremony site.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- The Wedding -->
-    <section id="wedding" class="py-16 md:py-20 bg-primary text-white relative overflow-hidden">
+    <section id="wedding" class="py-12 md:py-16 bg-(--trip-forest) text-white relative overflow-hidden">
       <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
       <div class="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
-        <div class="mb-8 reveal-on-scroll">
+        <div class="mb-6 reveal-on-scroll">
           <h2 class="text-3xl md:text-5xl font-serif font-extrabold tracking-tight max-w-2xl">
             Day 6: a beach ceremony <span class="text-accent-orange italic font-serif font-semibold">beneath 700-year-old trees.</span>
           </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 reveal-on-scroll">
-          <img src="/assets/travel/costa-rica/wedding-2.jpg" alt="Bride and groom portrait at Manzanillo National Park, Costa Rica" class="w-full aspect-[3/4] object-cover rounded-organic-1 shadow-xl" />
-          <img src="/assets/travel/costa-rica/wedding-4.jpg" alt="Bride and groom on a jungle bridge in Costa Rica" class="w-full aspect-[3/4] object-cover rounded-organic-2 shadow-xl" />
+        <div class="grid grid-cols-2 md:grid-cols-3 md:grid-rows-2 gap-3 mb-6 reveal-on-scroll">
+          <img src="/assets/travel/costa-rica/wedding-2.jpg" alt="Bride and groom portrait at Manzanillo National Park, Costa Rica" loading="lazy" decoding="async" class="col-span-2 md:col-span-1 md:row-span-2 aspect-[4/3] md:aspect-auto w-full h-full object-cover rounded-organic-1 shadow-xl" />
+          <img src="/assets/travel/costa-rica/wedding-4.jpg" alt="Bride and groom on a jungle bridge in Costa Rica" loading="lazy" decoding="async" class="aspect-square object-cover rounded-organic-2 shadow-xl" />
+          <img src="/assets/travel/costa-rica/wedding-8.jpg" alt="Bride and groom embracing on the beach at dusk, Costa Rica" loading="lazy" decoding="async" class="aspect-square object-cover rounded-organic-2 shadow-xl" />
+          <img src="/assets/travel/costa-rica/wedding-3.jpg" alt="Bride and groom under a palm tree on the beach, Costa Rica" loading="lazy" decoding="async" class="aspect-square object-cover rounded-organic-3 shadow-xl" />
+          <img src="/assets/travel/costa-rica/wedding-5.jpg" alt="Bride and groom dancing in the jungle, Costa Rica" loading="lazy" decoding="async" class="aspect-square object-cover rounded-organic-3 shadow-xl" />
         </div>
 
-        <div class="reveal-on-scroll space-y-4 font-sans text-white/80 text-base leading-relaxed max-w-3xl mb-8">
+        <div class="reveal-on-scroll space-y-4 font-sans text-white/85 text-base leading-relaxed max-w-3xl mb-6">
           <p>Bridal makeup at 10:30, a first look in the villa backyard, portraits at Manzanillo National Park (sweating through formalwear in tropical heat is a real occupational hazard). Then the ceremony at Punta Uva: an aisle of centuries-old trees, wild monkeys overhead, and a full setup built from scratch on a public beach that was never anyone's to rent out as a venue.</p>
         </div>
 
-        <img src="/assets/travel/costa-rica/wedding-6.jpg" alt="Wedding party cheering on the beach in Costa Rica" class="w-full aspect-[16/9] object-cover rounded-organic-1 shadow-xl mb-8 reveal-on-scroll" />
+        <img src="/assets/travel/costa-rica/wedding-6.jpg" alt="Wedding party cheering on the beach in Costa Rica" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover rounded-organic-1 shadow-xl mb-6 reveal-on-scroll" />
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 reveal-on-scroll">
-          <img src="/assets/travel/costa-rica/wedding-5.jpg" alt="Bride and groom dancing in the jungle, Costa Rica" class="w-full aspect-[3/4] object-cover rounded-organic-3 shadow-xl" />
-          <img src="/assets/travel/costa-rica/wedding-8.jpg" alt="Bride and groom embracing on the beach at dusk, Costa Rica" class="w-full aspect-[3/4] object-cover rounded-organic-1 shadow-xl" />
-        </div>
-
-        <img src="/assets/travel/costa-rica/wedding-7.jpg" alt="Groom lifting bride at the water's edge in Costa Rica" class="w-full aspect-[16/9] object-cover rounded-organic-2 shadow-xl mb-8 reveal-on-scroll" />
-
-        <div class="reveal-on-scroll space-y-4 font-sans text-white/80 text-base leading-relaxed max-w-3xl mb-8">
+        <div class="reveal-on-scroll space-y-4 font-sans text-white/85 text-base leading-relaxed max-w-3xl mb-6">
           <p>The vows were the real thing &mdash; a little shaky, a lot of tears held back. Dinner at <span class="text-white font-semibold">SOCA</span> was interrupted by a full mariachi band that appeared with zero warning and played through our first dance. Toasts ran long, the guest sombrero got signed as a keepsake, and dessert showed up as a tres leches cake nobody ordered and everybody needed.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 reveal-on-scroll">
-          <img src="/assets/travel/costa-rica/wedding-3.jpg" alt="Bride and groom under a palm tree on the beach, Costa Rica" class="w-full aspect-[3/4] object-cover rounded-organic-3 shadow-xl" />
-          <img src="/assets/travel/costa-rica/wedding-9.jpg" alt="Bride looking back at the ocean cliffside, Costa Rica" class="w-full aspect-[3/4] object-cover rounded-organic-2 shadow-xl" />
+          <img src="/assets/travel/costa-rica/wedding-7.jpg" alt="Groom lifting bride at the water's edge in Costa Rica" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover rounded-organic-2 shadow-xl" />
+          <img src="/assets/travel/costa-rica/wedding-9.jpg" alt="Bride looking back at the ocean cliffside, Costa Rica" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover rounded-organic-3 shadow-xl" />
         </div>
       </div>
     </section>
 
     <!-- After the Wedding -->
-    <section id="after" class="py-14 md:py-20 bg-white relative">
+    <section id="after" class="py-10 md:py-16 bg-(--trip-paper) relative">
       <div class="max-w-5xl mx-auto px-6 md:px-12">
-        <h2 class="text-2xl md:text-3xl font-serif font-extrabold text-primary tracking-tight mb-10 reveal-on-scroll">
+        <h2 class="text-2xl md:text-3xl font-serif font-extrabold text-primary tracking-tight mb-8 reveal-on-scroll">
           The trip kept going after &ldquo;I do.&rdquo;
         </h2>
 
-        <div class="space-y-14">
+        <div class="space-y-10">
           <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center reveal-on-scroll">
             <div class="md:col-span-8">
-              <img src="/assets/travel/costa-rica/post-wedding-breakfast.jpg" alt="Breakfast the morning after the wedding at Bread & Chocolate cafe" class="w-full aspect-[16/10] object-cover rounded-organic-2 shadow-lg rotate-1" />
+              <img src="/assets/travel/costa-rica/post-wedding-breakfast.jpg" alt="Breakfast the morning after the wedding at Bread & Chocolate cafe" loading="lazy" decoding="async" class="w-full aspect-[16/10] object-cover rounded-organic-2 shadow-lg rotate-1" />
             </div>
             <div class="md:col-span-4">
               <h3 class="font-serif font-extrabold text-2xl text-primary mb-3">Day 7: Baby Sloths and Happy Tears</h3>
@@ -418,12 +416,12 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
             <div class="md:col-span-4 order-2 md:order-1">
               <h3 class="font-serif font-extrabold text-2xl text-primary mb-3">Days 8&ndash;10: Waterfalls, a Volcano, and the Long Way Home</h3>
               <p class="font-sans text-text-secondary text-base leading-relaxed">
-                Hot springs every night at Los Lagos, a Maui-green waterfall detour, and an Arenal viewpoint hike that cleared to a full volcano view the second we finished it. A troop of coatis begged for snacks on their hind legs before one last scenic drive back to San José and flights home &mdash; closing the ten days that started as a rebellion against a $30K quote.
+                Hot springs every night at Los Lagos, a Maui-green waterfall detour, and an Arenal viewpoint hike that cleared to a full volcano view the second we finished it. A troop of coatis begged for snacks before one last scenic drive back to San José and flights home &mdash; closing the ten days that started as a rebellion against a $30K quote.
               </p>
             </div>
             <div class="md:col-span-8 order-1 md:order-2 grid grid-cols-2 gap-3">
-              <img src="/assets/travel/costa-rica/arenal-volcano.jpg" alt="Arenal Volcano viewpoint hike in La Fortuna, Costa Rica" class="w-full aspect-[3/4] object-cover rounded-organic-1 shadow-lg" />
-              <img src="/assets/travel/costa-rica/la-fortuna-hanging-bridges.jpg" alt="Rainforest canopy near La Fortuna, Costa Rica" class="w-full aspect-[3/4] object-cover rounded-organic-1 shadow-lg mt-6 -rotate-1" />
+              <img src="/assets/travel/costa-rica/arenal-volcano.jpg" alt="Arenal Volcano viewpoint hike in La Fortuna, Costa Rica" loading="lazy" decoding="async" class="w-full aspect-[3/4] object-cover rounded-organic-1 shadow-lg" />
+              <img src="/assets/travel/costa-rica/la-fortuna-hanging-bridges.jpg" alt="Rainforest canopy near La Fortuna, Costa Rica" loading="lazy" decoding="async" class="w-full aspect-[3/4] object-cover rounded-organic-1 shadow-lg mt-6 -rotate-1" />
             </div>
           </div>
         </div>
@@ -431,47 +429,32 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
     </section>
 
     <!-- Gallery -->
-    <section id="gallery" class="py-14 md:py-20 bg-neutral-light/40 border-y border-gray-100/80">
+    <section id="gallery" class="py-10 md:py-16 bg-neutral-light/40 border-y border-gray-100/80">
       <div class="max-w-7xl mx-auto px-6 md:px-12">
-        <h2 class="text-3xl md:text-5xl font-serif font-extrabold text-primary tracking-tight mb-8 reveal-on-scroll">
-          More from <span class="text-accent-blue italic font-serif font-semibold">ten unforgettable days.</span>
+        <h2 class="text-2xl md:text-3xl font-serif font-extrabold text-primary tracking-tight mb-6 reveal-on-scroll">
+          More from ten unforgettable days.
         </h2>
 
-        <div class="columns-2 md:columns-3 gap-4 space-y-4 reveal-on-scroll">
-          <img src="/assets/travel/costa-rica/wedding-villa.jpg" alt="The wedding weekend villa in Puerto Viejo, Costa Rica" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
-          <img src="/assets/travel/costa-rica/cahuita-beach.jpg" alt="Beach inside Cahuita National Park, Costa Rica" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
-          <img src="/assets/travel/costa-rica/soca-dancing.jpg" alt="Our first dance with a surprise mariachi band at SOCA" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
-          <img src="/assets/travel/costa-rica/manzanillo-boat-family.jpg" alt="Family on the Manzanillo dolphin and snorkel boat tour" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
-          <img src="/assets/travel/costa-rica/wildlife-birds.jpg" alt="Toucan spotted near the Jaguar Rescue Center, Costa Rica" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
-          <img src="/assets/travel/costa-rica/horseback-riding-beach.jpg" alt="Horseback riding along the beach in Costa Rica" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
-          <img src="/assets/travel/costa-rica/soca-restaurant-1.jpg" alt="Interior of SOCA restaurant, the wedding dinner venue" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
-          <img src="/assets/travel/costa-rica/remote-beach-2.jpg" alt="Remote private beach near Manzanillo, Costa Rica" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
-          <img src="/assets/travel/costa-rica/soca-groom.jpg" alt="Dinner at SOCA before the mariachi band surprise" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
-          <img src="/assets/travel/costa-rica/arenal-volcano-couple.jpg" alt="Couple at the Arenal Volcano viewpoint" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
-          <img src="/assets/travel/costa-rica/soca-food.jpg" alt="Dinner plates at SOCA restaurant, Puerto Viejo" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
-          <img src="/assets/travel/costa-rica/wedding-morning.jpg" alt="Poolside downtime during the trip" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
-        </div>
-
-        <!-- Videos -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 reveal-on-scroll">
-          <div class="space-y-2">
-            <div class="aspect-[9/16] max-h-[70vh] mx-auto rounded-organic-1 overflow-hidden shadow-lg border border-gray-100">
-              <iframe class="w-full h-full" src="https://www.youtube.com/embed/VhUTLnEus9k" title="Dolphin &amp; Snorkel Boat Tour, Manzanillo, Costa Rica" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <p class="text-center font-sans text-xs text-text-secondary">Dolphin &amp; Snorkel Boat Tour</p>
-          </div>
-          <div class="space-y-2">
-            <div class="aspect-[9/16] max-h-[70vh] mx-auto rounded-organic-1 overflow-hidden shadow-lg border border-gray-100">
-              <iframe class="w-full h-full" src="https://www.youtube.com/embed/SHwkJ1Jacsk" title="Our Private Remote Beach, Manzanillo, Costa Rica" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <p class="text-center font-sans text-xs text-text-secondary">Our Private Remote Beach</p>
-          </div>
+        <div class="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4 reveal-on-scroll">
+          <img src="/assets/travel/costa-rica/wedding-villa.jpg" alt="The wedding weekend villa in Puerto Viejo, Costa Rica" loading="lazy" decoding="async" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
+          <img src="/assets/travel/costa-rica/cahuita-beach.jpg" alt="Beach inside Cahuita National Park, Costa Rica" loading="lazy" decoding="async" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
+          <img src="/assets/travel/costa-rica/soca-dancing.jpg" alt="Our first dance with a surprise mariachi band at SOCA" loading="lazy" decoding="async" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
+          <img src="/assets/travel/costa-rica/manzanillo-boat-family.jpg" alt="Family on the Manzanillo dolphin and snorkel boat tour" loading="lazy" decoding="async" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
+          <img src="/assets/travel/costa-rica/wildlife-birds.jpg" alt="Toucan spotted near the Jaguar Rescue Center, Costa Rica" loading="lazy" decoding="async" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
+          <img src="/assets/travel/costa-rica/horseback-riding-beach.jpg" alt="Horseback riding along the beach in Costa Rica" loading="lazy" decoding="async" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
+          <img src="/assets/travel/costa-rica/soca-restaurant-1.jpg" alt="Interior of SOCA restaurant, the wedding dinner venue" loading="lazy" decoding="async" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
+          <img src="/assets/travel/costa-rica/remote-beach-2.jpg" alt="Remote private beach near Manzanillo, Costa Rica" loading="lazy" decoding="async" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
+          <img src="/assets/travel/costa-rica/soca-groom.jpg" alt="Dinner at SOCA before the mariachi band surprise" loading="lazy" decoding="async" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
+          <img src="/assets/travel/costa-rica/arenal-volcano-couple.jpg" alt="Couple at the Arenal Volcano viewpoint" loading="lazy" decoding="async" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
+          <img src="/assets/travel/costa-rica/soca-food.jpg" alt="Dinner plates at SOCA restaurant, Puerto Viejo" loading="lazy" decoding="async" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
+          <img src="/assets/travel/costa-rica/wedding-morning.jpg" alt="Poolside downtime during the trip" loading="lazy" decoding="async" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
+          <img src="/assets/travel/costa-rica/beach-swing.jpg" alt="Beach swing on a remote stretch of Costa Rica coastline" loading="lazy" decoding="async" class="w-full rounded-organic-2 shadow-md break-inside-avoid" />
         </div>
       </div>
     </section>
 
     <!-- By the Numbers -->
-    <section class="py-10 bg-white">
+    <section class="py-8 bg-white">
       <div class="max-w-6xl mx-auto px-6 md:px-12">
         <div class="grid grid-cols-2 md:grid-cols-6 gap-6 text-center reveal-on-scroll">
           <div>
@@ -502,6 +485,13 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
       </div>
     </section>
 
+    <!-- Light closing note -->
+    <section class="py-10 bg-(--trip-forest) text-white text-center">
+      <p class="font-serif text-lg md:text-xl max-w-lg mx-auto px-6">
+        More trips like this are always in the works &mdash; <a href="/travel/#intake" class="text-(--trip-leaf-light) underline underline-offset-4 decoration-1 hover:text-white transition-colors">let's plan yours</a>.
+      </p>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-primary border-t border-white/5 text-white/50 py-12">
       <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -517,6 +507,11 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
       </div>
     </footer>
 
+    <!-- Back to top -->
+    <button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-(--trip-forest) text-white shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"></path></svg>
+    </button>
+
     <script>
       // Scroll Reveal Animations
       const revealElements = document.querySelectorAll('.reveal-on-scroll');
@@ -531,6 +526,21 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
       };
       window.addEventListener('scroll', revealOnScroll);
       window.addEventListener('load', revealOnScroll);
+
+      // Back to top
+      const backToTop = document.getElementById('back-to-top');
+      const toggleBackToTop = () => {
+        if (window.scrollY > 900) {
+          backToTop.classList.remove('opacity-0', 'pointer-events-none');
+        } else {
+          backToTop.classList.add('opacity-0', 'pointer-events-none');
+        }
+      };
+      window.addEventListener('scroll', toggleBackToTop);
+      backToTop.addEventListener('click', () => {
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+      });
     </script>
   </body>
 </html>
