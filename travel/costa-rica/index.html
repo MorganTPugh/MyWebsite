@@ -46,11 +46,25 @@
           <a href="#gallery" class="font-sans text-sm font-medium text-text-secondary hover:text-accent-orange transition-colors">Gallery</a>
         </nav>
 
-        <div>
+        <div class="flex items-center gap-2">
           <a href="/travel/#intake" class="font-serif font-bold text-xs bg-primary text-white hover:bg-accent-orange px-5 py-2.5 rounded-xl transition-all shadow-md">
             Plan My Trip
           </a>
+          <button id="mobile-menu-toggle" type="button" class="md:hidden flex items-center justify-center w-10 h-10 text-primary" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
         </div>
+      </div>
+
+      <!-- Mobile menu panel -->
+      <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100/80 shadow-lg">
+        <nav class="flex flex-col px-6 py-4">
+          <a href="/travel/#portfolio" class="font-sans text-sm font-medium text-text-secondary py-3 border-b border-gray-100">&larr; All Trips</a>
+          <a href="#story" class="mobile-menu-link font-sans text-sm font-medium text-text-secondary py-3 border-b border-gray-100">The Spark</a>
+          <a href="#wedding" class="mobile-menu-link font-sans text-sm font-medium text-text-secondary py-3 border-b border-gray-100">The Wedding</a>
+          <a href="#gallery" class="mobile-menu-link font-sans text-sm font-medium text-text-secondary py-3">Gallery</a>
+        </nav>
       </div>
     </header>
 
@@ -83,7 +97,7 @@
     </section>
 
     <!-- The Spark -->
-    <section id="story" class="py-10 md:py-16 bg-white relative">
+    <section id="story" class="py-10 md:py-16 bg-white relative scroll-mt-24">
       <div class="max-w-5xl mx-auto px-6 md:px-12">
         <h2 class="text-3xl md:text-5xl font-serif font-extrabold text-primary tracking-tight mb-6 reveal-on-scroll">
           We Said No to <span class="text-(--trip-leaf) italic font-serif font-semibold">the Wedding Industrial Complex.</span>
@@ -91,8 +105,8 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center reveal-on-scroll">
           <div class="lg:col-span-5 space-y-4 font-sans text-text-secondary text-[1.1rem] leading-relaxed">
-            <p>After weeks of digging into wedding options across Colorado, one thing became clear: every piece of the puzzle was expensive, and staying on a reasonable budget meant compromising on almost everything that actually mattered to us.</p>
-            <p>So we asked what actually mattered: chasing adventure, traveling with our favorite people, and making memories that would stick. Staying on track for financial freedom. And a wedding day that felt romantic and easy &mdash; not like a fire drill.</p>
+            <p>After weeks of digging into wedding options across Colorado, one thing became clear: everything was expensive, and staying on budget meant compromising on almost everything that actually mattered to us.</p>
+            <p>So we honed in on what's truly important to us: chasing adventure, making core memories with our favorite people, and staying on track for financial freedom. We wanted a wedding day that felt romantic and easy&mdash;not like a fire drill.</p>
           </div>
           <div class="lg:col-span-7">
             <img src="/assets/travel/costa-rica/wedding-9.jpg" alt="Bride looking back at the ocean cliffside, Costa Rica" loading="lazy" decoding="async" class="w-full h-full object-cover rounded-organic-2 shadow-xl" />
@@ -100,14 +114,14 @@
         </div>
 
         <p class="font-sans text-text-secondary text-[1.1rem] leading-relaxed max-w-3xl mt-6 reveal-on-scroll">
-          Since I knew I could handle the curation and logistics myself, we split the celebration in two: five days in Mexico City with our closest friends, and ten days in Costa Rica with our families for the wedding. Looking back, it's exactly the choice we'd make again.
+          Since we knew we could handle the curation and logistics ourselves, we split the celebration in two: five days in Mexico City with our closest friends, and ten days in Costa Rica with our families for the wedding. Looking back, it's exactly the choice we'd make again.
         </p>
 
       </div>
     </section>
 
     <!-- The Route -->
-    <section id="route" class="py-10 md:py-16 bg-(--trip-forest) text-white relative overflow-hidden">
+    <section id="route" class="py-8 md:py-12 bg-(--trip-forest) text-white relative overflow-hidden">
       <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
       <div class="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-8 reveal-on-scroll">
@@ -393,7 +407,7 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
     </section>
 
     <!-- The Wedding -->
-    <section id="wedding" class="py-12 md:py-16 bg-(--trip-forest) text-white relative overflow-hidden">
+    <section id="wedding" class="py-12 md:py-16 bg-(--trip-forest) text-white relative overflow-hidden scroll-mt-24">
       <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
       <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div class="mb-6 reveal-on-scroll">
@@ -401,7 +415,7 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
             Day 5: THE WEDDING DAY
           </h2>
           <p class="text-xl md:text-2xl text-accent-orange italic font-serif font-semibold mt-1">
-            Monkeys, Mariachis, &amp; Zero Venue Fees
+            Monkeys, Mariachi, and Jungle Magic
           </p>
         </div>
 
@@ -414,14 +428,14 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
           <img src="/assets/travel/costa-rica/wedding-5.jpg" alt="Bride and groom dancing in the jungle, Costa Rica" loading="lazy" decoding="async" class="col-span-2 md:col-span-1 md:col-start-4 md:row-start-1 md:row-span-2 aspect-[4/3] md:aspect-auto w-full h-full object-cover rounded-organic-3 shadow-xl" />
         </div>
 
-        <div class="reveal-on-scroll space-y-4 font-sans text-white/85 text-base leading-relaxed max-w-3xl mb-6">
+        <div class="reveal-on-scroll space-y-4 font-sans text-white/85 text-base leading-relaxed max-w-[850px] mb-6">
           <p>Bridal makeup at 10:30, a sweet first look in the villa's jungle backyard, portraits at Manzanillo Wildlife Refuge with sloths literally hanging above us. Then the ceremony at Punta Uva: an aisle of centuries-old trees, wild monkeys playing overhead, and a full setup built from scratch on a remote beach that was never anyone's to rent out as a venue - and we had it all to ourselves.</p>
           <p>The backdrop for our vow exchange was stunning - the rainforest meeting the white sandy beach at sunset - complete with chilled coconut waters and a champagne toast on the sand.</p>
         </div>
 
         <img src="/assets/travel/costa-rica/wedding-6.jpg" alt="Wedding party cheering on the beach in Costa Rica" loading="lazy" decoding="async" class="w-full aspect-[16/9] object-cover rounded-organic-1 shadow-xl mb-6 reveal-on-scroll" />
 
-        <div class="reveal-on-scroll space-y-4 font-sans text-white/85 text-base leading-relaxed max-w-3xl mb-6">
+        <div class="reveal-on-scroll space-y-4 font-sans text-white/85 text-base leading-relaxed max-w-[850px] mb-6">
           <p>The vows were the real thing &mdash; a little shaky, a lot of tears held back. Our reception was hosted at <span class="text-white font-semibold">SOCA</span>, a breathtaking, high-end indonesian-inspired garden restaurant. It was interrupted by a full mariachi band that appeared with zero warning and played through our first dance. Toasts ran long, the guest sombrero got signed as a keepsake. We danced, ate incredible steak and lobster, and smashed some tres leches cake. We capped off the night drinking and swimming under the stars back at the villa. Absolute perfection.</p>
         </div>
 
@@ -447,7 +461,7 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
               <img src="/assets/travel/costa-rica/sloth.jpg" alt="Sloth at the Jaguar Rescue Center in Costa Rica" loading="lazy" decoding="async" class="w-full aspect-[3/4] object-cover rounded-organic-2 shadow-lg" />
             </div>
             <div class="md:col-span-5">
-              <h3 class="font-serif font-extrabold text-2xl text-primary mb-3">Day 6: Baby Sloths and Happy Tears</h3>
+              <h3 class="font-serif font-extrabold text-2xl text-primary mb-3">Day 6: Happy tears, rescued wildlife, and a beach club</h3>
               <p class="font-sans text-text-secondary text-base leading-relaxed mb-3">
                 You know it was a good wedding when you sit down for breakfast the next morning at a local cafe and literally burst into happy tears over how perfect it all was (and how thrilled I was to be done with my bridal diet!).
               </p>
@@ -460,7 +474,7 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
           <!-- Day 7 -->
           <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center reveal-on-scroll">
             <div class="md:col-span-4">
-              <h3 class="font-serif font-extrabold text-2xl text-primary mb-3">Day 7: Winding Hot Springs &amp; Resort Life</h3>
+              <h3 class="font-serif font-extrabold text-2xl text-primary mb-3">Day 7: Winding Hot Springs, waterfalls, and relaxation</h3>
               <p class="font-sans text-text-secondary text-base leading-relaxed">
                 We said goodbye to the Caribbean coast and made the scenic drive to La Fortuna. We checked into the Los Lagos Resort, and everyone's jaws dropped when we discovered the dozens of natural hot springs winding through the property. We spent the evening soaking with tropical drinks in hand.
               </p>
@@ -473,14 +487,14 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
 
           <!-- Days 8-10 -->
           <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center reveal-on-scroll">
-            <div class="md:col-span-8 grid grid-cols-2 gap-3">
-              <img src="/assets/travel/costa-rica/arenal-volcano.jpg" alt="Arenal Volcano viewpoint hike in La Fortuna, Costa Rica" loading="lazy" decoding="async" class="w-full aspect-[3/4] object-cover rounded-organic-1 shadow-lg" />
-              <img src="/assets/travel/costa-rica/la-fortuna-hanging-bridges.jpg" alt="Rainforest canopy near La Fortuna, Costa Rica" loading="lazy" decoding="async" class="w-full aspect-[3/4] object-cover rounded-organic-1 shadow-lg mt-6" />
+            <div class="md:col-span-8 grid gap-3" style="grid-template-columns: 9fr 5fr;">
+              <img src="/assets/travel/costa-rica/arenal-volcano.jpg" alt="Arenal Volcano viewpoint hike in La Fortuna, Costa Rica" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover rounded-organic-1 shadow-lg" />
+              <img src="/assets/travel/costa-rica/la-fortuna-hanging-bridges.jpg" alt="Rainforest canopy near La Fortuna, Costa Rica" loading="lazy" decoding="async" class="w-full aspect-[3/4] object-cover rounded-organic-1 shadow-lg" />
             </div>
             <div class="md:col-span-4">
-              <h3 class="font-serif font-extrabold text-2xl text-primary mb-3">Days 8&ndash;10: Waterfalls, a Volcano, and the Long Way Home</h3>
+              <h3 class="font-serif font-extrabold text-2xl text-primary mb-3">Days 8&ndash;10: Hanging bridges, culinary gems and a scenic farewell</h3>
               <p class="font-sans text-text-secondary text-base leading-relaxed">
-                La Fortuna completely stole our hearts with the Fortuna Waterfall, the stunning Mistico hanging bridges, and a food scene that blew us away at every single stop. Our final full day of exploring around Lake Arenal ended in a massive tropical downpour, which we happily escaped by ducking into a local bakery for the best fruit croissants I've ever tasted. We spent our last evening soaking in the resort's hot springs and toasting to an unforgettable trip over an incredible meal at an authentic Italian spot run by Rome expats. The next morning, we made the scenic drive back to San José, boarded our flights, and officially said goodbye to paradise.
+                La Fortuna stole our hearts with its waterfalls, the Mistico hanging bridges, volcano views, and an incredible food scene. After a rainy final day exploring Lake Arenal, we dried off at a local bakery over unforgettable fruit croissants. We spent our last evening enjoying the hot springs and toasting to our trip at an authentic Italian spot run by Roman expats. The next morning, we took the scenic drive back to San José and flew home from paradise.
               </p>
             </div>
           </div>
@@ -489,7 +503,7 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
     </section>
 
     <!-- Gallery -->
-    <section id="gallery" class="py-10 md:py-16 bg-neutral-light/40 border-y border-gray-100/80">
+    <section id="gallery" class="py-10 md:py-16 bg-neutral-light/40 border-y border-gray-100/80 scroll-mt-24">
       <div class="max-w-7xl mx-auto px-6 md:px-12">
         <h2 class="text-2xl md:text-3xl font-serif font-extrabold text-primary tracking-tight mb-6 reveal-on-scroll">
           More from ten unforgettable days.
@@ -571,7 +585,7 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
     </footer>
 
     <!-- Back to top -->
-    <button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-(--trip-forest) text-white shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+    <button id="back-to-top" aria-label="Back to top" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-(--trip-forest) text-white shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"></path></svg>
     </button>
 
@@ -603,6 +617,24 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
       backToTop.addEventListener('click', () => {
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+      });
+
+      // Mobile menu
+      const menuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIconOpen = document.getElementById('menu-icon-open');
+      const menuIconClose = document.getElementById('menu-icon-close');
+      const setMenuOpen = (open) => {
+        mobileMenu.classList.toggle('hidden', !open);
+        menuIconOpen.classList.toggle('hidden', open);
+        menuIconClose.classList.toggle('hidden', !open);
+        menuToggle.setAttribute('aria-expanded', String(open));
+      };
+      menuToggle.addEventListener('click', () => {
+        setMenuOpen(mobileMenu.classList.contains('hidden'));
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => setMenuOpen(false));
       });
 
       // Photo carousels
