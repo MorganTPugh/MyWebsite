@@ -285,7 +285,7 @@ export default function ConsultingPage() {
               {/* LinkedIn Card */}
               <a 
                 id="consulting-linkedin-link"
-                href="https://www.linkedin.com/in/morgan-pugh/"
+                href="https://www.linkedin.com/in/morgan-pugh-392819100/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-all hover:-translate-y-1 group flex items-start gap-4"
@@ -319,7 +319,7 @@ export default function ConsultingPage() {
                   <button
                     id="clear-inquiry-selection"
                     onClick={() => setSelectedService(null)}
-                    className="font-mono text-xs text-white/40 hover:text-white/60 underline cursor-pointer"
+                    className="font-mono text-xs text-white/70 hover:text-white/90 underline cursor-pointer"
                   >
                     Reset custom inquiry selection
                   </button>
@@ -350,7 +350,7 @@ export default function ConsultingPage() {
                       <button 
                         type="button"
                         onClick={() => setSelectedService(null)}
-                        className="text-[10px] font-mono text-white/40 hover:text-white"
+                        className="text-[10px] font-mono text-white/70 hover:text-white"
                       >
                         [clear]
                       </button>
@@ -368,7 +368,7 @@ export default function ConsultingPage() {
                         placeholder="John Doe"
                         value={formName}
                         onChange={(e) => setFormName(e.target.value)}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent-orange/50 transition-colors placeholder:text-white/20"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent-orange/50 transition-colors placeholder:text-white/50"
                       />
                     </div>
                     <div>
@@ -381,7 +381,7 @@ export default function ConsultingPage() {
                         placeholder="john@example.com"
                         value={formEmail}
                         onChange={(e) => setFormEmail(e.target.value)}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent-orange/50 transition-colors placeholder:text-white/20"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent-orange/50 transition-colors placeholder:text-white/50"
                       />
                     </div>
                   </div>
@@ -409,7 +409,7 @@ export default function ConsultingPage() {
                       placeholder={selectedService ? `What are your main goals with ${selectedService}?` : "Tell me a little about where you are stuck or what you need help with..."}
                       value={formMessage}
                       onChange={(e) => setFormMessage(e.target.value)}
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent-orange/50 transition-colors placeholder:text-white/20 resize-none"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent-orange/50 transition-colors placeholder:text-white/50 resize-none"
                     />
                   </div>
 

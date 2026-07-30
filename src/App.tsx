@@ -1,11 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Navbar from "./components/Navbar";
 import CareerPage from "./components/CareerPage";
-import ConsultingPage from "./components/ConsultingPage";
 import Footer from "./components/Footer";
-import ThemeSelector from "./components/ThemeSelector";
-import NavigationCompass from "./components/NavigationCompass";
+import { isCorporateSite } from "./siteMode";
+
+// Lazy-loaded so the corporate build's bundle never pulls in the consulting page.
+const ConsultingPage = lazy(() => import("./components/ConsultingPage"));
 
 export default function App() {
   const [activePage, setActivePage] = useState<"career" | "consulting">("career");
@@ -69,16 +70,18 @@ export default function App() {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.35, ease: "easeInOut" }}
           >
-            {activePage === "career" ? (
-              <CareerPage 
-                onScrollToSection={handleScrollToSection} 
+            {activePage === "career" || isCorporateSite ? (
+              <CareerPage
+                onScrollToSection={handleScrollToSection}
                 onNavigateToConsulting={() => {
                   setActivePage("consulting");
                   window.scrollTo({ top: 0, behavior: "smooth" });
-                }} 
+                }}
               />
             ) : (
-              <ConsultingPage />
+              <Suspense fallback={null}>
+                <ConsultingPage />
+              </Suspense>
             )}
           </motion.div>
         </AnimatePresence>
@@ -86,16 +89,6 @@ export default function App() {
 
       {/* 3. Global Footer */}
       <Footer />
-
-      {/* 4. Live Interactive Color Theme Swapper */}
-      <ThemeSelector />
-
-      {/* 5. Experimental Navigation Compass */}
-      <NavigationCompass 
-        activePage={activePage}
-        setActivePage={setActivePage}
-        onScrollToSection={handleScrollToSection}
-      />
     </div>
   );
 }

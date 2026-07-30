@@ -4,30 +4,30 @@ export const IMPACT_HIGHLIGHTS: ImpactHighlight[] = [
   {
     metric: "73%",
     metricLabel: "YoY Growth",
-    headline: "From neglected product to enterprise growth engine.",
-    story: "Inherited a level-funded health product that had been largely deprioritized for years. Rebuilt the go-to-market motion from the ground up — redesigning pricing methodologies, training 30+ sales teams on consultative strategies, and leading cross-functional coordination across 28 markets. Resulted in 73% year-over-year membership growth and substantial profitability improvement.",
+    headline: "Creating an enterprise growth engine.",
+    story: "Inherited a product that had been deprioritized for years. As a 4 person team, we rebuilt the go-to-market motion - redesigning and training on pricing methodologies, training 30+ sales teams on consultative strategies, and leading cross-functional coordination across dozens of teams. This has resulted in substantial growth rates for 4 years in a row, including 73% YoY for 2026, alongside brag-worthy profitability figures.",
     category: "GTM & Growth"
   },
   {
     metric: "1,000+",
     metricLabel: "Hours Saved",
-    headline: "Post-sale chaos turned into streamlined automation.",
-    story: "Our post-sale process was a 22-page paper nightmare that brokers hated and internal teams dreaded. I led a cross-functional initiative across legal, compliance, implementation, and sales support spanning 28+ markets to redesign the entire application process, eliminate redundant documentation, and deploy DocuSign within Salesforce. Saved ~1 hour per sold case for 80+ employees, every single time.",
-    category: "Process Automation"
-  },
-  {
-    metric: "2×",
-    metricLabel: "Market Scale",
-    headline: "Built a $15M+ market portfolio from near scratch.",
-    story: "Joined Elevance Health to help launch the Colorado level-funded market. Built robust pricing frameworks, trained sales teams on level funding and ASO concepts, developed broker-specific strategies, and personally managed a $15M+ portfolio — all while the market more than doubled in size and continuously exceeded profitability targets.",
-    category: "Portfolio & Finance"
+    headline: "Modernized an entire post-sale process.",
+    story: "Took on a post-sale process that was manual, inconsistent, and bogged down by legacy paperwork — creating friction for sales, clients, and brokers alike. Led a cross-functional overhaul across legal, compliance, sales, and implementation teams spanning 14+ markets: cut redundancies and page count, standardized documentation across states, and drove DocuSign adoption against real internal resistance. Result: 1,000+ hours saved annually across 30+ teams, and a faster experience for every client and broker in the process.",
+    category: "Process & Change Management"
   },
   {
     metric: "500+",
     metricLabel: "Enabled Peers",
     headline: "Turned product knowledge into a company-wide capability.",
-    story: "Built and managed a centralized support system — including custom product artifacts to get teams on the same page and an AI chatbot grounded in product documentation — empowering 500+ employees to clearly explain our value proposition to hundreds of external partners. Created high-impact sales enablement resources that reduced escalations, simplified complex pricing, and made everyone's jobs easier.",
+    story: "Solo-built and deployed a Custom GPT chatbot grounded in internal product documentation, rate tables, and process guides — writing the reference material myself and engineering prompt routing to surface accurate, department-specific answers instead of generic ones. Combined with custom product artifacts, it empowered 500+ employees to clearly explain our value proposition and simplify complex pricing conversations with external partners.",
     category: "AI & Enablement"
+  },
+  {
+    metric: "2×",
+    metricLabel: "Market Scale",
+    headline: "Grew and managed a $15M+ portfolio.",
+    story: "Joined Elevance Health to help launch the Colorado level-funded market. Built robust pricing frameworks, trained sales teams on level funding and ASO concepts, developed broker-specific strategies, and personally managed a $15M+ portfolio — all while the market more than doubled in size and continuously exceeded profitability targets.",
+    category: "Risk Management & Finance"
   }
 ];
 
@@ -48,16 +48,14 @@ export const SKILL_CATEGORIES = [
   {
     title: "Product Operations",
     skills: [
-      "Product Lifecycle Management",
+      "Cross-Functional Program Management",
       "Requirements Gathering",
       "Roadmapping",
-      "Release Management",
+      "New Program/Pilot Launch",
       "QA & Testing",
       "Product Ownership",
-      "Sprint Cycles",
       "Scrum Master (Certified)",
-      "Sales Enablement",
-      "Customer Journey & Touchpoint Mapping"
+      "Sales Enablement"
     ]
   },
   {
@@ -68,16 +66,16 @@ export const SKILL_CATEGORIES = [
       "Executive Presentations",
       "Change Management",
       "Process Improvement",
+      "Process Mapping & Workflow Redesign",
       "Operational Excellence",
-      "Workflow Automation",
       "Influencing Without Authority"
     ]
   },
   {
     title: "Data & Analytics",
     skills: [
-      "Risk Modeling",
-      "Predictive Analytics",
+      "Risk Assessment & Segmentation",
+      "Predictive Model Evaluation",
       "Claims Data Analysis",
       "KPI Tracking",
       "Attrition Analysis",
@@ -112,10 +110,10 @@ export const SKILL_CATEGORIES = [
       "NotebookLM",
       "Gemini",
       "Prompt Engineering",
+      "AI Context Engineering",
       "Custom Chatbot Development",
-      "RAG Deployment",
-      "AI Workflow Automation",
-      "AI Document Analysis"
+      "AI Prototyping & Development",
+      "AI Workflow Automation"
     ]
   }
 ];
@@ -127,9 +125,10 @@ export const CAREER_TIMELINE: Experience[] = [
     dates: "November 2025 – Present",
     location: "Denver, CO (Remote)",
     bullets: [
-      "Drive cross-functional product operations across 30+ teams, coordinating Product, Legal, Finance, Engineering, Sales, and Actuarial functions to ensure GTM alignment and smooth commercial launches.",
-      "Achieved 73% YoY product membership growth through scalable release management, stakeholder frameworks, and cross-departmental gate reviews.",
-      "Report on operational risk, KPI outcomes, and strategic progress directly to the Senior Leadership Team, identifying market-specific gaps and driving adoption of operational best practices across 28+ markets."
+      "Drive cross-functional GTM execution across 30+ teams — including Legal, Finance, Engineering, Sales, and Actuarial — aligning stakeholders and accelerating commercial growth in a complex, matrixed organization.",
+      "Achieved 73% YoY product membership growth by rebuilding the go-to-market strategy from the ground up: redesigning pricing methodologies, building stakeholder alignment frameworks, and coordinating execution across 14+ markets.",
+      "Report on operational risk, KPI performance, and strategic progress to senior leadership, surfacing market-specific gaps and driving adoption of best practices across 14+ markets.",
+      "Deeply understand customer needs through research, feedback, analytics, and market insights, translating those findings into product opportunities."
     ]
   },
   {
@@ -141,7 +140,7 @@ export const CAREER_TIMELINE: Experience[] = [
       "Spearheaded post-sale process modernization initiative saving ~1 hour per sold case for 80+ employees across 28 markets by leading DocuSign automation and complete documentation redesign.",
       "Led go-to-market strategy for level-funded product across 14 markets, overseeing pricing methodology redesign, sales training, competitive positioning, and customer experience improvements.",
       "Built and managed company-wide support infrastructure (mailbox + custom AI chatbot) enabling 500+ employees to conduct expert-level product conversations with external broker partners.",
-      "Conducted extensive competitive analysis, customer attrition studies, and financial risk modeling to inform long-term product strategy and contract negotiation approaches."
+      "Led a broader AI-assisted competitive intelligence effort — including a multi-year analysis of competitor 10-K filings alongside other market and pricing data — synthesizing findings into executive-ready strategy and contract negotiation recommendations."
     ]
   },
   {
@@ -151,8 +150,8 @@ export const CAREER_TIMELINE: Experience[] = [
     location: "Denver, CO",
     bullets: [
       "Managed a rapidly growing, $15M+ block of business in the Colorado market, which doubled in scale during tenure, while exceeding profitability targets through data-informed pricing and continuous competitive analysis.",
-      "Independently identified critical blind spots in a third-party predictive risk scoring system — investigated 20–50 affected cases, documented financial exposure, escalated formally to the vendor, and successfully secured a confirmed system patch.",
-      "Built a cross-functional broker tracking and evaluation framework (Excel-based) organically adopted across the company and embedded into renewal strategy workflows."
+      "Caught a systemic pharmacy claims underpricing flaw in a third-party predictive risk model that no one else, internal or external, had caught first — independently investigated 20+ affected cases, quantified the financial exposure, and escalated a formal analysis directly to the vendor, who confirmed the issue and shipped a patch.",
+      "Built a cross-functional broker tracking and evaluation framework organically adopted across the company and embedded into renewal strategy workflows."
     ]
   },
   {
@@ -178,9 +177,9 @@ export const EDUCATION = {
 };
 
 export const PERSONAL_FACTS: PersonalFact[] = [
-  { icon: "🌍", label: "37+ countries and counting" },
-  { icon: "🐾", label: "Foster parent to 10+ dogs and cats" },
-  { icon: "🏔️", label: "Based in Denver, CO — the mountains are the commute" }
+  { icon: "🌍", label: "8 countries, 25 states and counting" },
+  { icon: "🐾", label: "Foster parent to 40+ dogs and cats" },
+  { icon: "💰", label: "Financial independence advocate" }
 ];
 
 export const SERVICES: Service[] = [

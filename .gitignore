@@ -6,3 +6,9 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Raw/unprocessed photo & video uploads — not used by the built site (see public/assets/)
+/assets/
+
+# Local runtime state from the design-review tool, not source content
+.impeccable/live/

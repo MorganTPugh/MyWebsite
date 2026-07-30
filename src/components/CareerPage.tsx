@@ -14,12 +14,12 @@ import {
   GraduationCap, 
   Mail, 
   Linkedin, 
-  MapPin, 
-  Heart,
+  MapPin,
   ChevronRight,
   Sparkles
 } from "lucide-react";
 import { IMPACT_HIGHLIGHTS, SKILL_CATEGORIES, CAREER_TIMELINE, EDUCATION, PERSONAL_FACTS } from "../data";
+import { isCorporateSite } from "../siteMode";
 
 // Custom Counter Component for metric animation when in view
 function MetricCounter({ value, label }: { value: string; label?: string }) {
@@ -82,7 +82,7 @@ function MetricCounter({ value, label }: { value: string; label?: string }) {
   };
 
   return (
-    <div ref={elementRef} className="text-5xl md:text-6xl font-extrabold font-sans text-accent-orange tracking-tight">
+    <div ref={elementRef} className="text-2xl md:text-3xl font-extrabold font-sans text-accent-orange tracking-tight">
       {count || value}
     </div>
   );
@@ -174,7 +174,7 @@ export default function CareerPage({
         <div className="absolute inset-0 bg-grid-pattern opacity-10" />
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7 space-y-8">
+          <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full">
               <span className="w-2 h-2 rounded-full bg-accent-orange animate-pulse" />
               <span className="font-sans text-[11px] md:text-xs font-bold text-accent-blue tracking-widest uppercase">
@@ -182,7 +182,7 @@ export default function CareerPage({
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-serif font-extrabold leading-[1.15] tracking-tight max-w-4xl text-white">
+            <h1 className="text-3xl md:text-5xl font-serif font-extrabold leading-[1.15] tracking-tight max-w-4xl text-white">
               I turn complexity into clarity — and{" "}
               <span className="text-accent-orange italic font-serif font-semibold">clarity into results.</span>
             </h1>
@@ -220,14 +220,16 @@ export default function CareerPage({
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
 
-              <button
-                id="hero-services-btn"
-                onClick={onNavigateToConsulting}
-                className="bg-white/5 hover:bg-white/10 text-white text-center font-bold px-8 py-4 rounded-xl border border-white/10 transition-all hover:-translate-y-0.5 cursor-pointer flex items-center justify-center gap-2"
-              >
-                <Sparkles className="w-4 h-4 text-accent-blue" />
-                <span>Explore My Services</span>
-              </button>
+              {!isCorporateSite && (
+                <button
+                  id="hero-services-btn"
+                  onClick={onNavigateToConsulting}
+                  className="bg-white/5 hover:bg-white/10 text-white text-center font-bold px-8 py-4 rounded-xl border border-white/10 transition-all hover:-translate-y-0.5 cursor-pointer flex items-center justify-center gap-2"
+                >
+                  <Sparkles className="w-4 h-4 text-accent-blue" />
+                  <span>Explore My Services</span>
+                </button>
+              )}
             </div>
           </div>
 
@@ -279,7 +281,7 @@ export default function CareerPage({
             {/* Satellite widgets floating around representing pieces of systems */}
             <div className="absolute -top-4 -left-4 p-3 bg-primary/95 border border-white/15 rounded-xl flex items-center gap-2 backdrop-blur-md shadow-2xl hover:scale-105 transition-transform">
               <TrendingUp className="w-4 h-4 text-accent-orange animate-pulse" />
-              <span className="font-mono text-xs font-bold text-white tracking-wide">GTM Frameworks</span>
+              <span className="font-mono text-xs font-bold text-white tracking-wide">GTM Execution</span>
             </div>
             <div className="absolute -bottom-4 -right-4 p-3 bg-primary/95 border border-white/15 rounded-xl flex items-center gap-2 backdrop-blur-md shadow-2xl hover:scale-105 transition-transform">
               <Cpu className="w-4 h-4 text-accent-blue" />
@@ -290,67 +292,69 @@ export default function CareerPage({
       </section>
 
       {/* 2. What I Do / Positioning Section */}
-      <section id="about" className="py-24 bg-white relative overflow-hidden">
+      <section id="about" className="py-16 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
-          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <span className="font-mono text-xs font-bold text-accent-orange tracking-widest uppercase">
-              WHAT I BRING
-            </span>
-            <h2 className="text-3xl md:text-5xl font-serif font-extrabold text-primary tracking-tight leading-tight">
+          <div className="text-center max-w-3xl mx-auto space-y-4 mb-10">
+            <h2 className="text-2xl md:text-4xl font-serif font-extrabold text-primary tracking-tight leading-tight">
               Part strategist, part operator. <span className="text-accent-orange italic font-serif font-semibold">Always</span> in the room where it happens.
             </h2>
             <p className="font-sans text-text-secondary text-base md:text-lg leading-relaxed pt-2">
-              My career doesn&apos;t fit neatly into one box — and that&apos;s intentional. I&apos;ve spent nearly 
-              a decade living at the intersections: between data and storytelling, between product vision and 
-              operational execution, between the C-suite and the 30+ teams making it real. That&apos;s where 
-              high-leverage work happens, and it&apos;s where I thrive.
+              My career doesn&apos;t fit in one box — and that&apos;s intentional. I live at the intersections:
+              between data and storytelling, between product vision and execution, between the C-suite and the
+              30+ teams making it real. That&apos;s where high-leverage work happens, and where I thrive.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <div className="bg-neutral-light/60 p-8 rounded-organic-1 hover:rounded-organic-2 border border-gray-200/60 shadow-md hover:shadow-xl hover:shadow-accent-blue/[0.03] transition-all duration-500 hover:-translate-y-1">
-              <div className="w-12 h-12 rounded-organic-1 bg-accent-blue/10 flex items-center justify-center text-accent-blue mb-6">
-                <Compass className="w-6 h-6" />
+            <div className="bg-neutral-light/60 p-6 rounded-organic-1 hover:rounded-organic-2 border border-gray-200/60 shadow-md hover:shadow-xl hover:shadow-accent-blue/[0.03] transition-all duration-500 hover:-translate-y-1">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-organic-1 bg-accent-blue/10 flex items-center justify-center text-accent-blue shrink-0">
+                  <Compass className="w-5 h-5" />
+                </div>
+                <h3 className="text-xl font-bold font-serif text-primary">
+                  Systems Thinking
+                </h3>
               </div>
-              <h3 className="text-xl font-bold font-serif text-primary mb-3">
-                Systems Thinking
-              </h3>
               <p className="font-sans text-text-secondary text-sm md:text-base leading-relaxed">
-                I see how pieces connect before others see the pieces. Whether it&apos;s a go-to-market motion, a 
-                post-sale workflow, or a competitive landscape, I map the system first — then I find where 
+                I see how pieces connect before others see the pieces. Whether it&apos;s a go-to-market motion, a
+                post-sale workflow, or a competitive landscape, I map the system first — then I find where
                 to pull the high-leverage lever.
               </p>
             </div>
 
             {/* Card 2 */}
-            <div className="bg-neutral-light/60 p-8 rounded-organic-2 hover:rounded-organic-3 border border-gray-200/60 shadow-md hover:shadow-xl hover:shadow-accent-orange/[0.03] transition-all duration-500 hover:-translate-y-1">
-              <div className="w-12 h-12 rounded-organic-2 bg-accent-orange/10 flex items-center justify-center text-accent-orange mb-6">
-                <Users className="w-6 h-6" />
+            <div className="bg-neutral-light/60 p-6 rounded-organic-2 hover:rounded-organic-3 border border-gray-200/60 shadow-md hover:shadow-xl hover:shadow-accent-orange/[0.03] transition-all duration-500 hover:-translate-y-1">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-organic-2 bg-accent-orange/10 flex items-center justify-center text-accent-orange shrink-0">
+                  <Users className="w-5 h-5" />
+                </div>
+                <h3 className="text-xl font-bold font-serif text-primary">
+                  Cross-Functional Execution
+                </h3>
               </div>
-              <h3 className="text-xl font-bold font-serif text-primary mb-3">
-                Cross-Functional Execution
-              </h3>
               <p className="font-sans text-text-secondary text-sm md:text-base leading-relaxed">
-                Aligning 30+ teams and 10+ departments is where most big initiatives die. I&apos;ve built the 
-                frameworks, driven company-wide initiatives — across legal, engineering, 
+                Aligning 30+ teams and 10+ departments is where most big initiatives die. I&apos;ve built the
+                frameworks, driven company-wide initiatives — across legal, engineering,
                 finance, sales, and product — to make complex plans happen.
               </p>
             </div>
 
             {/* Card 3 */}
-            <div className="bg-neutral-light/60 p-8 rounded-organic-3 hover:rounded-organic-1 border border-gray-200/60 shadow-md hover:shadow-xl hover:shadow-accent-blue/[0.03] transition-all duration-500 hover:-translate-y-1">
-              <div className="w-12 h-12 rounded-organic-3 bg-primary/10 flex items-center justify-center text-primary mb-6">
-                <Coins className="w-6 h-6" />
+            <div className="bg-neutral-light/60 p-6 rounded-organic-3 hover:rounded-organic-1 border border-gray-200/60 shadow-md hover:shadow-xl hover:shadow-accent-blue/[0.03] transition-all duration-500 hover:-translate-y-1">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-organic-3 bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                  <Coins className="w-5 h-5" />
+                </div>
+                <h3 className="text-xl font-bold font-serif text-primary">
+                  Data-Driven Strategy
+                </h3>
               </div>
-              <h3 className="text-xl font-bold font-serif text-primary mb-3">
-                Data-Driven Strategy
-              </h3>
               <p className="font-sans text-text-secondary text-sm md:text-base leading-relaxed">
-                I don&apos;t pitch fuzzy ideas — I build logical business cases. Every strategy I deliver is grounded in 
-                competitive analysis, customer feedback, and financial modeling. My background in risk management 
-                and analysis means I build resilient, data-informed strategies that balance ambitious growth with precise execution.
+                I don&apos;t pitch fuzzy ideas — I build the case. Every strategy I deliver is grounded in
+                competitive analysis, customer feedback, and financial modeling, backed by a risk management
+                foundation that balances ambitious growth with precise execution.
               </p>
             </div>
           </div>
@@ -358,38 +362,38 @@ export default function CareerPage({
       </section>
 
       {/* 3. Impact Highlights */}
-      <section id="impact" className="py-24 bg-neutral-light relative border-y border-gray-100">
+      <section id="impact" className="py-14 bg-neutral-light relative border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          
-          <div className="text-center max-w-2xl mx-auto space-y-3 mb-16">
+
+          <div className="text-center max-w-2xl mx-auto space-y-2 mb-8">
             <span className="font-mono text-xs font-bold text-accent-orange tracking-widest uppercase">
               MEASURABLE IMPACT
             </span>
-            <h2 className="text-3xl md:text-5xl font-serif font-extrabold text-primary tracking-tight leading-tight">
+            <h2 className="text-xl md:text-3xl font-serif font-extrabold text-primary tracking-tight leading-tight">
               The work that <span className="text-accent-blue italic font-serif font-semibold">moves the needle.</span>
             </h2>
-            <p className="font-sans text-text-secondary text-sm md:text-base">
-              Real-world results achieved by bridging GTM strategy, product alignment, and systematic process optimization.
+            <p className="font-sans text-text-secondary text-sm">
+              Real-world results achieved by bridging GTM strategy, product roadmap leadership, and systematic process optimization.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {IMPACT_HIGHLIGHTS.map((item, index) => (
-              <div 
+              <div
                 key={index}
-                className="bg-white p-8 md:p-10 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+                className="bg-white p-6 md:p-7 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
               >
-                <div className="space-y-6">
-                  <div className="flex items-baseline justify-between border-b border-gray-100 pb-4">
+                <div className="space-y-4">
+                  <div className="flex items-baseline justify-between border-b border-gray-100 pb-2.5">
                     <MetricCounter value={item.metric} />
                     <span className="font-sans text-xs font-bold uppercase tracking-wider text-accent-blue bg-accent-blue/10 px-3 py-1 rounded-full">
                       {item.category}
                     </span>
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold font-sans text-primary leading-snug">
+                  <h3 className="text-base md:text-lg font-bold font-sans text-primary leading-snug">
                     {item.headline}
                   </h3>
-                  <p className="font-sans text-text-secondary text-sm md:text-base leading-relaxed">
+                  <p className="font-sans text-text-secondary text-sm leading-relaxed">
                     {item.story}
                   </p>
                 </div>
@@ -400,51 +404,51 @@ export default function CareerPage({
       </section>
 
       {/* 4. Skills & Expertise */}
-      <section id="skills" className="py-24 bg-white">
+      <section id="skills" className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          
-          <div className="text-center max-w-2xl mx-auto space-y-3 mb-16">
+
+          <div className="text-center max-w-2xl mx-auto space-y-2 mb-8">
             <span className="font-mono text-xs font-bold text-accent-orange tracking-widest uppercase">
               EXPERTISE
             </span>
-            <h2 className="text-3xl md:text-5xl font-serif font-extrabold text-primary tracking-tight">
+            <h2 className="text-xl md:text-3xl font-serif font-extrabold text-primary tracking-tight">
               What I know <span className="text-accent-orange italic font-serif font-medium">well.</span>
             </h2>
-            <p className="font-sans text-text-secondary text-sm md:text-base">
+            <p className="font-sans text-text-secondary text-sm">
               Hands-on leadership capabilities that bridge corporate strategy and day-to-day tactical execution.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {SKILL_CATEGORIES.map((category, index) => {
               const isOrange = index % 2 === 0;
               return (
-                <div 
+                <div
                   key={index}
-                  className={`bg-neutral-light/40 hover:bg-white p-6 md:p-8 rounded-2xl border transition-all duration-300 flex flex-col justify-between group/card ${
-                    isOrange 
-                      ? 'border-accent-orange/15 hover:border-accent-orange/40 hover:shadow-xl hover:shadow-accent-orange/[0.04]' 
+                  className={`bg-neutral-light/40 hover:bg-white p-5 md:p-6 rounded-2xl border transition-all duration-300 flex flex-col justify-between group/card ${
+                    isOrange
+                      ? 'border-accent-orange/15 hover:border-accent-orange/40 hover:shadow-xl hover:shadow-accent-orange/[0.04]'
                       : 'border-accent-blue/15 hover:border-accent-blue/40 hover:shadow-xl hover:shadow-accent-blue/[0.04]'
                   }`}
                 >
                   <div>
-                    <h3 className={`font-sans font-bold text-lg text-primary mb-4 pb-2 border-b flex items-center justify-between transition-colors ${
+                    <h3 className={`font-sans font-bold text-base text-primary mb-3 pb-2 border-b flex items-center justify-between transition-colors ${
                       isOrange ? 'border-accent-orange/10 group-hover/card:border-accent-orange/30' : 'border-accent-blue/10 group-hover/card:border-accent-blue/30'
                     }`}>
                       <span>{category.title}</span>
                       <span className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        isOrange 
-                          ? 'bg-accent-orange shadow-[0_0_8px_rgba(255,78,0,0.4)] group-hover/card:scale-125' 
+                        isOrange
+                          ? 'bg-accent-orange shadow-[0_0_8px_rgba(255,78,0,0.4)] group-hover/card:scale-125'
                           : 'bg-accent-blue shadow-[0_0_8px_rgba(0,163,255,0.4)] group-hover/card:scale-125'
                       }`} />
                     </h3>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5">
                       {category.skills.map((skill, sIdx) => (
-                        <span 
+                        <span
                           key={sIdx}
-                          className={`font-sans text-sm font-medium px-3.5 py-2 rounded-lg border shadow-[0_1px_2px_rgba(0,0,0,0.02)] transition-all duration-200 cursor-default ${
-                            isOrange 
-                              ? 'bg-white text-text-primary border-gray-200/70 hover:border-accent-orange/40 hover:bg-accent-orange/[0.03] hover:text-accent-orange hover:-translate-y-0.5' 
+                          className={`font-sans text-sm font-medium px-3 py-1.5 rounded-lg border shadow-[0_1px_2px_rgba(0,0,0,0.02)] transition-all duration-200 cursor-default ${
+                            isOrange
+                              ? 'bg-white text-text-primary border-gray-200/70 hover:border-accent-orange/40 hover:bg-accent-orange/[0.03] hover:text-accent-orange hover:-translate-y-0.5'
                               : 'bg-white text-text-primary border-gray-200/70 hover:border-accent-blue/40 hover:bg-accent-blue/[0.03] hover:text-accent-blue hover:-translate-y-0.5'
                           }`}
                         >
@@ -461,14 +465,14 @@ export default function CareerPage({
       </section>
 
       {/* 5. Career Timeline */}
-      <section id="experience" className="py-24 bg-neutral-light border-y border-gray-100">
+      <section id="experience" className="py-14 bg-neutral-light border-y border-gray-100">
         <div className="max-w-5xl mx-auto px-6 md:px-12">
-          
-          <div className="text-center max-w-2xl mx-auto space-y-3 mb-16">
+
+          <div className="text-center max-w-2xl mx-auto space-y-2 mb-8">
             <span className="font-mono text-xs font-bold text-accent-orange tracking-widest uppercase">
               EXPERIENCE
             </span>
-            <h2 className="text-3xl md:text-5xl font-serif font-extrabold text-primary tracking-tight">
+            <h2 className="text-2xl md:text-4xl font-serif font-extrabold text-primary tracking-tight">
               Nine years of building things that <span className="text-accent-blue italic font-serif font-semibold">scale.</span>
             </h2>
             <p className="font-sans text-text-secondary text-sm md:text-base">
@@ -477,7 +481,7 @@ export default function CareerPage({
           </div>
 
           {/* Vertical Timeline */}
-          <div className="relative border-l-2 border-accent-blue/30 ml-4 md:ml-6 space-y-12">
+          <div className="relative border-l-2 border-accent-blue/30 ml-4 md:ml-6 space-y-6">
             {CAREER_TIMELINE.map((pos, index) => (
               <div key={index} className="relative pl-8 md:pl-10">
                 {/* Timeline node */}
@@ -485,12 +489,9 @@ export default function CareerPage({
                   <span className="w-1.5 h-1.5 rounded-full bg-accent-orange animate-pulse" />
                 </span>
 
-                <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-4">
+                <div className="bg-white p-5 md:p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-3">
                     <div>
-                      <span className="font-mono text-xs font-bold text-accent-orange uppercase bg-accent-orange/5 border border-accent-orange/10 px-3 py-1 rounded-full inline-block mb-1.5">
-                        {pos.dates}
-                      </span>
                       <h3 className="text-xl font-bold font-sans text-primary">
                         {pos.title}
                       </h3>
@@ -498,9 +499,12 @@ export default function CareerPage({
                         {pos.company} — <span className="text-text-secondary font-medium">{pos.location}</span>
                       </p>
                     </div>
+                    <span className="font-mono text-xs font-bold text-accent-orange uppercase bg-accent-orange/5 border border-accent-orange/10 px-3 py-1 rounded-full inline-block shrink-0">
+                      {pos.dates}
+                    </span>
                   </div>
 
-                  <ul className="space-y-3 pt-2">
+                  <ul className="space-y-2 pt-1">
                     {pos.bullets.map((bullet, bIdx) => (
                       <li key={bIdx} className="font-sans text-text-secondary text-sm md:text-base leading-relaxed flex items-start">
                         <ChevronRight className="w-4 h-4 text-accent-orange shrink-0 mt-1 mr-2" />
@@ -514,27 +518,28 @@ export default function CareerPage({
           </div>
 
           {/* Education Block */}
-          <div className="mt-16 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 rounded-xl bg-accent-blue/10 flex items-center justify-center text-accent-blue">
-                <GraduationCap className="w-6 h-6" />
+          <div className="mt-8 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col gap-3">
+            <span className="self-start font-mono text-[10px] uppercase font-bold tracking-wider text-accent-orange bg-accent-orange/10 px-2.5 py-1 rounded-full">
+              Education & Credentials
+            </span>
+
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 rounded-xl bg-accent-blue/10 flex items-center justify-center text-accent-blue shrink-0">
+                <GraduationCap className="w-5 h-5" />
               </div>
               <div>
-                <span className="font-mono text-[10px] uppercase font-bold text-accent-orange tracking-wider">
-                  EDUCATION & CREDENTIALS
-                </span>
-                <h4 className="text-lg font-bold font-sans text-primary">
+                <p className="font-serif font-bold text-primary text-2xl whitespace-nowrap">
                   {EDUCATION.degree}
-                </h4>
+                </p>
                 <p className="font-sans text-sm text-text-secondary">
                   {EDUCATION.school}
                 </p>
               </div>
             </div>
-            
+
             <div className="flex flex-wrap gap-2">
               {EDUCATION.additional.map((item, idx) => (
-                <span 
+                <span
                   key={idx}
                   className="font-mono text-xs bg-neutral-light text-text-primary px-3 py-1.5 rounded-lg border border-gray-200"
                 >
@@ -547,18 +552,15 @@ export default function CareerPage({
       </section>
 
       {/* 6. About Me */}
-      <section id="about-me" className="py-24 bg-white">
+      <section id="about-me" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
             {/* Left side column: Photo placeholder and personal stats */}
-            <div className="lg:col-span-5 space-y-8">
+            <div className="lg:col-span-5 space-y-6">
               <div className="text-left space-y-2">
-                <span className="font-mono text-xs font-bold text-accent-orange tracking-widest uppercase">
-                  ABOUT
-                </span>
-                <h2 className="text-3xl md:text-5xl font-serif font-extrabold text-primary tracking-tight leading-tight">
+                <h2 className="text-2xl md:text-4xl font-serif font-extrabold text-primary tracking-tight leading-tight">
                   The person <span className="text-accent-orange italic font-serif font-semibold">behind</span> the portfolio.
                 </h2>
               </div>
@@ -567,15 +569,15 @@ export default function CareerPage({
               {/* PLACEHOLDER: Professional headshot, warm lighting preferred */}
               <div className="relative group rounded-organic-2 hover:rounded-organic-3 overflow-hidden shadow-xl aspect-[4/5] bg-gradient-to-tr from-primary to-accent-blue/30 flex flex-col justify-end p-8 border border-gray-100/80 transition-all duration-700 ease-in-out">
                 {!imageError ? (
-                  <img 
-                    src="/assets/images/morgan-headshot.jpg" 
-                    alt="Morgan Pugh" 
+                  <img
+                    src="/assets/images/morgan-about-2.jpg"
+                    alt="Morgan Pugh"
                     onError={() => {
-                      console.log("Headshot failed to load at assets/images/morgan-headshot.jpg, falling back to beautiful styled gradient block.");
+                      console.log("Headshot failed to load at assets/images/morgan-about-2.jpg, falling back to beautiful styled gradient block.");
                       setImageError(true);
                     }}
                     referrerPolicy="no-referrer"
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="absolute inset-0 w-full h-full object-cover object-[10%_75%] scale-[1.6] transition-transform duration-500 group-hover:scale-[1.65]"
                   />
                 ) : (
                   <div className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-80" />
@@ -587,7 +589,7 @@ export default function CareerPage({
                 {/* Overlay content explaining portrait */}
                 <div className="relative z-10 text-white space-y-2">
                   <div className="w-10 h-10 rounded-full bg-accent-orange/20 border border-accent-orange flex items-center justify-center text-accent-orange mb-3">
-                    <Heart className="w-5 h-5 animate-pulse" />
+                    <Compass className="w-5 h-5 animate-pulse" />
                   </div>
                   <span className="font-mono text-[11px] font-bold tracking-widest text-accent-blue uppercase block">
                     Denver, Colorado
@@ -597,7 +599,7 @@ export default function CareerPage({
                   </h3>
                   {imageError && (
                     <p className="font-sans text-xs text-white/80 leading-relaxed bg-black/30 p-2.5 rounded backdrop-blur-xs">
-                      [ To display your photo, place your image at: <code className="font-mono text-accent-orange bg-black/40 px-1 rounded">assets/images/morgan-headshot.jpg</code> ]
+                      [ To display your photo, place your image at: <code className="font-mono text-accent-orange bg-black/40 px-1 rounded">assets/images/morgan-about-2.jpg</code> ]
                     </p>
                   )}
                 </div>
@@ -610,10 +612,10 @@ export default function CareerPage({
               </div>
 
               {/* Personal Fact Badges */}
-              <div className="space-y-3">
+              <div className="space-y-1">
                 {PERSONAL_FACTS.map((fact, idx) => (
-                  <div key={idx} className="flex items-center space-x-3 bg-neutral-light p-4 rounded-xl border border-gray-100">
-                    <span className="text-2xl">{fact.icon}</span>
+                  <div key={idx} className="flex items-center space-x-3 bg-neutral-light px-2.5 py-1 rounded-xl border border-gray-100">
+                    <span className="text-base">{fact.icon}</span>
                     <span className="font-sans text-sm font-semibold text-text-primary">{fact.label}</span>
                   </div>
                 ))}
@@ -622,43 +624,99 @@ export default function CareerPage({
 
             {/* Right side column: Personal Story (Conversational & Engaging) */}
             <div className="lg:col-span-7 font-sans text-text-secondary text-base leading-relaxed space-y-6 lg:pt-10">
-              <p>
-                I grew up in Overland Park, Kansas — deep in Chiefs and Royals territory — with a childhood built 
-                around sports. Soccer, basketball, volleyball, softball: if it involved a team and competition, I 
-                was in. That instinct toward collaboration and friendly pressure never really left me.
-              </p>
-              
-              <p>
-                I made my way to the University of Kansas, where I studied finance, joined the rowing team, 
-                refereed intramural sports, and took the finance classes that made me realize I actually loved thinking 
-                about how to build and protect value over time. After graduation, I packed up for Denver with my 
-                long-term partner and our dog — and we haven&apos;t looked back.
-              </p>
+              {isCorporateSite ? (
+                <>
+                  <p>
+                    I grew up in a suburb of Kansas City, Kansas — deep in Chiefs and Royals territory — with a
+                    childhood built around sports. Soccer, basketball, volleyball, softball: if it involved a team
+                    and competition, I was in. That instinct toward collaboration and friendly pressure never
+                    really left me.
+                  </p>
 
-              <p>
-                Colorado turned us into outdoor people in the best way. Mountain biking, skiing, volleyball in Wash 
-                Park on weekends, and more hiking than I can count. We travel as often as we can, and I&apos;m something 
-                of an obsessive planner when we do. We&apos;ve pulled off a micro-wedding for 12 people in a remote 
-                corner of Costa Rica near the Panama border, a semi-joint bachelor/bachelorette trip to Mexico City, 
-                and adventures across Portugal, Spain, Canada, Hawaii, and a long list of National Parks. It all comes 
-                together because I genuinely love the logistics — the research, the contingency plans, and the moments 
-                where everything clicks.
-              </p>
+                  <p>
+                    I went to the University of Kansas to study finance, joined the rowing team, supervised
+                    intramural sports, and found, through my finance courses, that I genuinely loved thinking about
+                    how to build and protect value over time. After graduation, I packed up and moved to Denver and
+                    haven&apos;t looked back.
+                  </p>
 
-              <p>
-                Animals have always been part of my life too. I started volunteering at shelters when I was 16, and I 
-                still do. I currently walk dogs at True Companions animal shelter and we&apos;ve fostered dogs and cats 
-                on and off for years. I&apos;m also building a small project to help rescue organizations streamline some of 
-                their recurring work — flyers, training resources, and outreach materials — using generative AI tools. 
-                It&apos;s one of those side projects that reminds me why I love finding problems worth solving.
-              </p>
+                  <p>
+                    Colorado keeps me busy and thoroughly entertained. In a typical week I can be found either
+                    mountain biking or skiing, playing volleyball, enjoying the many parks, or at a library with my
+                    husband learning about whatever thing is exciting that month.
+                  </p>
 
-              <p>
-                Financially, I&apos;m wired toward long-term thinking. I&apos;ve reached{" "}
-                <strong className="text-primary font-bold">Coast FIRE</strong> and I&apos;m working toward full financial 
-                independence over the next decade or so — which means I think about money the same way I think about business 
-                strategy: compound the things that matter, eliminate the drag, and stay patient.
-              </p>
+                  <p>
+                    I&apos;ve always had a passion for animals. I started volunteering at shelters when I was 16 and
+                    still do — currently walking dogs at True Companions and fostering on and off. That&apos;s why I
+                    built{" "}
+                    <a
+                      href="https://rescue-kit.org"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-accent-orange font-bold hover:underline"
+                    >
+                      Rescue-kit
+                    </a>
+                    , a free tool/website I designed and coded solo to help rescue organizations and fosters create
+                    digital and printable flyers and outreach materials without any kind of design or technical
+                    experience — this kind of passion project reminds me why I love finding problems worth solving.
+                  </p>
+
+                  <p>
+                    Financially, I&apos;m wired toward long-term thinking. I&apos;ve reached{" "}
+                    <strong className="text-primary font-bold">Coast FIRE</strong>, and I&apos;m working toward full
+                    financial independence, which means I think about money the way I think about business
+                    strategy: compound what matters, cut the drag, stay patient.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p>
+                    I grew up in Overland Park, Kansas — deep in Chiefs and Royals territory — with a childhood built
+                    around sports. Soccer, basketball, volleyball, softball: if it involved a team and competition, I
+                    was in. That instinct toward collaboration and friendly pressure never really left me.
+                  </p>
+
+                  <p>
+                    I headed to the University of Kansas to study finance, joined the rowing team, refereed intramural
+                    sports, and found I genuinely loved thinking about how to build and protect value over time. After
+                    graduation, I packed up for Denver and haven&apos;t looked back.
+                  </p>
+
+                  <p>
+                    Colorado keeps me busy — mountain biking, skiing, volleyball in Wash Park, more hiking than I can
+                    count. I love to travel, and I plan obsessively and optimize every dollar when I do: a 12-person
+                    micro-wedding in Costa Rica, a bachelorette for 10 in Mexico City, adventures across Portugal, Spain,
+                    Canada, and Hawaii. I genuinely love perfecting travel logistics — the research, the itineraries, the
+                    moment it all clicks.
+                  </p>
+
+                  <p>
+                    Animals have always been part of my life. I started volunteering at shelters when I was 16 and still
+                    do — currently walking dogs at True Companions and fostering on and off for years. That&apos;s also
+                    why I built{" "}
+                    <a
+                      href="https://rescue-kit.org"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-accent-orange font-bold hover:underline"
+                    >
+                      Rescue-kit
+                    </a>
+                    , a free tool I designed and coded solo to help rescue organizations and fosters create digital and
+                    printable flyers and outreach materials without any kind of design or technical experience — the
+                    kind of side project that reminds me why I love finding problems worth solving.
+                  </p>
+
+                  <p>
+                    Financially, I&apos;m wired toward long-term thinking. I&apos;ve reached{" "}
+                    <strong className="text-primary font-bold">Coast FIRE</strong> by age 48, and I&apos;m working toward
+                    full financial independence, which means I think about money the way I think about business
+                    strategy: compound what matters, cut the drag, stay patient.
+                  </p>
+                </>
+              )}
 
               <div className="bg-neutral-light border-l-4 border-accent-orange p-5 rounded-r-2xl mt-8">
                 <span className="block font-sans font-bold text-primary text-sm mb-1">
@@ -677,26 +735,23 @@ export default function CareerPage({
       </section>
 
       {/* 7. Contact Section */}
-      <section id="contact" className="py-24 bg-primary text-white relative overflow-hidden">
+      <section id="contact" className="py-16 bg-primary text-white relative overflow-hidden">
         {/* Abstract background elements */}
         <div className="absolute inset-0 bg-grid-pattern opacity-5" />
         <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-accent-blue/10 blur-3xl" />
         <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-accent-orange/10 blur-3xl" />
 
-        <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10 space-y-8">
+        <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10 space-y-6">
           <div className="text-center space-y-3">
-            <span className="font-mono text-xs font-bold text-accent-orange tracking-widest uppercase">
-              LET&apos;S TALK
-            </span>
-            <h2 className="text-3xl md:text-5xl font-serif font-extrabold tracking-tight text-white leading-tight">
+            <h2 className="text-2xl md:text-4xl font-serif font-extrabold tracking-tight text-white leading-tight">
               Whether you&apos;re hiring, collaborating, or just curious — <span className="text-accent-orange italic font-serif font-semibold">reach out.</span>
             </h2>
           </div>
 
           <p className="font-sans text-white/70 text-base md:text-lg max-w-2xl mx-auto text-center leading-relaxed">
-            I&apos;m currently open to senior roles in Strategy & Operations, Product Operations, GTM Operations, 
-            Revenue Operations, and Business Operations. I&apos;m also available for select consulting projects — 
-            including project management, personal finance coaching, and travel planning.
+            I&apos;m currently open to senior strategy, product, and GTM roles, along with select consulting
+            projects — including project management, money coaching, or other opportunities where my skills
+            and background could add value!
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8 text-left items-start">
@@ -710,7 +765,7 @@ export default function CareerPage({
                 {/* LinkedIn Card */}
                 <a 
                   id="contact-linkedin-link"
-                  href="https://www.linkedin.com/in/morgan-pugh/"
+                  href="https://www.linkedin.com/in/morgan-pugh-392819100/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-all hover:-translate-y-1 group flex items-start gap-4"
@@ -736,11 +791,14 @@ export default function CareerPage({
                     <span className="block font-sans text-sm font-semibold text-white">
                       Denver, Colorado
                     </span>
+                    <span className="block font-sans text-xs font-semibold text-accent-orange">
+                      Open to opportunities worldwide
+                    </span>
                   </div>
                 </div>
               </div>
 
-              <div className="hidden lg:block pt-8 text-white/40 font-mono text-xs">
+              <div className="hidden lg:block pt-8 text-white/70 font-mono text-xs">
                 I respond within 48 hours. Let&apos;s build something great together.
               </div>
             </div>
@@ -771,7 +829,7 @@ export default function CareerPage({
                         placeholder="John Doe"
                         value={formName}
                         onChange={(e) => setFormName(e.target.value)}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent-orange/50 transition-colors placeholder:text-white/20"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent-orange/50 transition-colors placeholder:text-white/50"
                       />
                     </div>
                     <div>
@@ -784,7 +842,7 @@ export default function CareerPage({
                         placeholder="john@example.com"
                         value={formEmail}
                         onChange={(e) => setFormEmail(e.target.value)}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent-orange/50 transition-colors placeholder:text-white/20"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent-orange/50 transition-colors placeholder:text-white/50"
                       />
                     </div>
                   </div>
@@ -816,7 +874,7 @@ export default function CareerPage({
                       placeholder="How can I help you?"
                       value={formMessage}
                       onChange={(e) => setFormMessage(e.target.value)}
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent-orange/50 transition-colors placeholder:text-white/20 resize-none"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent-orange/50 transition-colors placeholder:text-white/50 resize-none"
                     />
                   </div>
 

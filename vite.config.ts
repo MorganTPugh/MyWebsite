@@ -15,12 +15,14 @@ export default defineConfig(() => {
       rollupOptions: {
         input: {
           main: path.resolve(__dirname, 'index.html'),
+          hire: path.resolve(__dirname, 'hire/index.html'),
+          all: path.resolve(__dirname, 'all/index.html'),
           projects: path.resolve(__dirname, 'projects/index.html'),
           travel: path.resolve(__dirname, 'travel/index.html'),
           travelCostaRica: path.resolve(__dirname, 'travel/costa-rica/index.html'),
-          money: path.resolve(__dirname, 'money/index.html')
-        }
-      }
+          money: path.resolve(__dirname, 'money/index.html'),
+        },
+      },
     },
     server: {
       // HMR is disabled in AI Studio via DISABLE_HMR env var.

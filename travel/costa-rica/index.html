@@ -69,6 +69,10 @@
       </div>
     </header>
 
+    <!-- Scroll Progress Bar (Left Edge - Option 1) -->
+    <div class="fixed left-0 top-0 bottom-0 w-[3px] bg-gray-200/20 z-50">
+      <div id="scroll-progress-bar" class="w-full h-full bg-accent-orange origin-top transition-transform duration-75 ease-out" style="transform: scaleY(0);"></div>
+    </div>
     <!-- Hero -->
     <section class="relative min-h-[80vh] flex items-end text-white overflow-hidden pt-28 pb-14">
       <div class="absolute inset-0 bg-primary z-0">
@@ -98,7 +102,7 @@
     </section>
 
     <!-- The Spark -->
-    <section id="story" class="py-10 md:py-16 bg-white relative scroll-mt-24">
+    <section id="story" class="py-8 md:py-12 bg-white relative scroll-mt-24">
       <div class="max-w-5xl mx-auto px-6 md:px-12">
         <h2 class="text-3xl md:text-5xl font-serif font-extrabold text-primary tracking-tight mb-6 reveal-on-scroll">
           We Said No to <span class="text-(--trip-leaf) italic font-serif font-semibold">the Wedding Industrial Complex.</span>
@@ -122,7 +126,7 @@
     </section>
 
     <!-- The Route -->
-    <section id="route" class="py-8 md:py-12 bg-(--trip-forest) text-white relative overflow-hidden">
+    <section id="route" class="py-6 md:py-10 bg-(--trip-forest) text-white relative overflow-hidden">
       <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
       <div class="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-8 reveal-on-scroll">
@@ -330,12 +334,13 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
       </div>
     </section>
 
+
     <!-- Day by Day -->
-    <section id="days" class="py-10 md:py-16 bg-white relative">
+    <section id="days" class="py-8 md:py-12 bg-white relative">
       <div class="max-w-7xl mx-auto px-6 md:px-12">
         <div class="space-y-14">
           <!-- Days 1-2 -->
-          <div class="grid grid-cols-1 md:grid-cols-[4.3fr_7.7fr] gap-8 items-center reveal-on-scroll">
+          <div id="day-1-2" class="grid grid-cols-1 md:grid-cols-[4.3fr_7.7fr] gap-8 items-center reveal-on-scroll">
             <div class="order-2 md:order-1">
               <h3 class="font-serif font-extrabold text-2xl text-(--trip-leaf-dark) mb-3">Days 1 &amp; 2: San José &rarr; Playa Chiquita</h3>
               <p class="font-sans text-text-secondary text-base leading-relaxed mb-3">
@@ -349,10 +354,10 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
               <img src="/assets/travel/costa-rica/arrecife.jpg" alt="Scenic tropical shoreline at Arrecife beach in Costa Rica" loading="lazy" decoding="async" class="w-full aspect-[3/4] object-cover rounded-organic-3 shadow-lg" />
 
               <!-- "The Stay" carousel -->
-              <div class="relative aspect-[3/2] rounded-organic-1 shadow-lg overflow-hidden bg-white" data-carousel>
-                <img src="/assets/travel/costa-rica/the-stay-1.jpg" alt="Villa exterior with pool at dusk, Puerto Viejo, Costa Rica" loading="lazy" decoding="async" class="carousel-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-300" data-index="0" />
-                <img src="/assets/travel/costa-rica/the-stay-2.jpg" alt="Waking up in the villa with a garden and pool view, Costa Rica" loading="lazy" decoding="async" class="carousel-slide absolute left-1/2 -translate-x-1/2 top-0 h-[125%] w-auto object-cover object-top transition-opacity duration-300 opacity-0" data-index="1" />
-                <img src="/assets/travel/costa-rica/the-stay-3.jpg" alt="Villa lounge area, Puerto Viejo, Costa Rica" loading="lazy" decoding="async" class="carousel-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-300 opacity-0" data-index="2" />
+              <div class="relative aspect-[3/2] rounded-organic-1 shadow-lg overflow-hidden bg-white" style="-webkit-mask-image: -webkit-radial-gradient(white, black);" data-carousel>
+                <img src="/assets/travel/costa-rica/the-stay-1.jpg" alt="Villa exterior with pool at dusk, Puerto Viejo, Costa Rica" loading="lazy" decoding="async" class="carousel-slide absolute inset-0 w-full h-full object-cover rounded-organic-1 transition-opacity duration-300" data-index="0" />
+                <img src="/assets/travel/costa-rica/the-stay-2.jpg" alt="Waking up in the villa with a garden and pool view, Costa Rica" loading="lazy" decoding="async" class="carousel-slide absolute inset-0 w-full h-full object-cover rounded-organic-1 transition-opacity duration-300 opacity-0" data-index="1" />
+                <img src="/assets/travel/costa-rica/the-stay-3.jpg" alt="Villa lounge area, Puerto Viejo, Costa Rica" loading="lazy" decoding="async" class="carousel-slide absolute inset-0 w-full h-full object-cover rounded-organic-1 transition-opacity duration-300 opacity-0" data-index="2" />
 
                 <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
                 <span class="absolute top-3 left-3 text-[11px] font-bold text-white bg-primary/70 backdrop-blur-sm px-2.5 py-1 rounded-full">The Stay</span>
@@ -374,7 +379,7 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
           </div>
 
           <!-- Day 3 -->
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center reveal-on-scroll">
+          <div id="day-3" class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center reveal-on-scroll">
             <div class="md:col-span-8 grid grid-cols-5 gap-3">
               <img src="/assets/travel/costa-rica/cahuita-snorkeling.jpg" alt="Snorkeling boat tour at Cahuita National Park, Costa Rica" loading="lazy" decoding="async" class="col-span-3 w-full h-full aspect-[4/3] object-cover rounded-organic-2 shadow-lg" />
               <img src="/assets/travel/costa-rica/coati.jpg" alt="Coati begging for snacks in Costa Rica" loading="lazy" decoding="async" class="col-span-2 w-full h-full aspect-[3/4] object-cover rounded-organic-2 shadow-lg" />
@@ -391,7 +396,7 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
           </div>
 
           <!-- Day 4 -->
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center reveal-on-scroll">
+          <div id="day-4" class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center reveal-on-scroll">
             <div class="md:col-span-4 order-2 md:order-1">
               <h3 class="font-serif font-extrabold text-2xl text-(--trip-leaf-dark) mb-3">Day 4: Dolphins at Manzanillo</h3>
               <p class="font-sans text-text-secondary text-base leading-relaxed">
@@ -408,7 +413,7 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
     </section>
 
     <!-- The Wedding -->
-    <section id="wedding" class="py-12 md:py-16 bg-(--trip-forest) text-white relative overflow-hidden scroll-mt-24">
+    <section id="wedding" class="py-10 md:py-12 bg-(--trip-forest) text-white relative overflow-hidden scroll-mt-24">
       <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
       <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div class="mb-6 reveal-on-scroll">
@@ -449,14 +454,14 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
     </section>
 
     <!-- After the Wedding -->
-    <section id="after" class="py-10 md:py-16 bg-(--trip-paper) relative">
+    <section id="after" class="py-8 md:py-12 bg-(--trip-paper) relative">
       <div class="max-w-7xl mx-auto px-6 md:px-12">
         <h2 class="text-2xl md:text-3xl font-serif font-extrabold text-primary tracking-tight mb-8 reveal-on-scroll">
           The trip kept going after &ldquo;I do.&rdquo;
         </h2>
 
         <div class="space-y-10">
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center reveal-on-scroll">
+          <div id="day-6" class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center reveal-on-scroll">
             <div class="md:col-span-7 grid grid-cols-2 gap-3">
               <img src="/assets/travel/costa-rica/post-wedding-breakfast.jpg" alt="Breakfast the morning after the wedding at Bread & Chocolate cafe" loading="lazy" decoding="async" class="w-full aspect-[3/4] object-cover rounded-organic-2 shadow-lg" />
               <img src="/assets/travel/costa-rica/sloth.jpg" alt="Sloth at the Jaguar Rescue Center in Costa Rica" loading="lazy" decoding="async" class="w-full aspect-[3/4] object-cover rounded-organic-2 shadow-lg" />
@@ -473,7 +478,7 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
           </div>
 
           <!-- Day 7 -->
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center reveal-on-scroll">
+          <div id="day-7" class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center reveal-on-scroll">
             <div class="md:col-span-4">
               <h3 class="font-serif font-extrabold text-2xl text-(--trip-leaf-dark) mb-3">Day 7: Hot Springs, waterfalls, and relaxation</h3>
               <p class="font-sans text-text-secondary text-base leading-relaxed">
@@ -487,7 +492,7 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
           </div>
 
           <!-- Days 8-10 -->
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center reveal-on-scroll">
+          <div id="day-8-10" class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center reveal-on-scroll">
             <div class="md:col-span-8 grid gap-3" style="grid-template-columns: 9fr 5fr;">
               <img src="/assets/travel/costa-rica/arenal-volcano.jpg" alt="Arenal Volcano viewpoint hike in La Fortuna, Costa Rica" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover rounded-organic-1 shadow-lg" />
               <img src="/assets/travel/costa-rica/la-fortuna-hanging-bridges.jpg" alt="Rainforest canopy near La Fortuna, Costa Rica" loading="lazy" decoding="async" class="w-full aspect-[3/4] object-cover rounded-organic-1 shadow-lg" />
@@ -504,9 +509,9 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
     </section>
 
     <!-- Gallery -->
-    <section id="gallery" class="py-10 md:py-16 bg-neutral-light/40 border-y border-gray-100/80 scroll-mt-24">
+    <section id="gallery" class="py-8 md:py-12 bg-(--trip-forest) text-white scroll-mt-24">
       <div class="max-w-7xl mx-auto px-6 md:px-12">
-        <h2 class="text-2xl md:text-3xl font-serif font-extrabold text-primary tracking-tight mb-6 reveal-on-scroll">
+        <h2 class="text-2xl md:text-3xl font-serif font-extrabold text-white tracking-tight mb-6 reveal-on-scroll">
           More from ten unforgettable days.
         </h2>
 
@@ -532,7 +537,7 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
     </section>
 
     <!-- By the Numbers -->
-    <section class="py-8 bg-white">
+    <section class="py-6 bg-white">
       <div class="max-w-6xl mx-auto px-6 md:px-12">
         <div class="grid grid-cols-2 md:grid-cols-6 gap-6 text-center reveal-on-scroll">
           <div>
@@ -564,7 +569,7 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
     </section>
 
     <!-- Light closing note -->
-    <section class="py-10 bg-(--trip-forest) text-white text-center">
+    <section class="py-8 bg-(--trip-forest) text-white text-center">
       <p class="font-serif text-lg md:text-xl max-w-lg mx-auto px-6">
         More trips like this are always in the works &mdash; <a href="/travel/#intake" class="text-(--trip-leaf-light) underline underline-offset-4 decoration-1 hover:text-white transition-colors">let's plan yours</a>.
       </p>
@@ -619,6 +624,19 @@ c-4 94 -7 367 -7 607 l0 436 140 28 c157 31 153 25 81 107 -37 41 -40 49 -31
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
       });
+      // Scroll Progress Bar (Left Edge - Option 1)
+      const scrollProgressBar = document.getElementById('scroll-progress-bar');
+      const updateScrollProgress = () => {
+        if (!scrollProgressBar) return;
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = docHeight > 0 ? scrollTop / docHeight : 0;
+        scrollProgressBar.style.transform = `scaleY(${scrollPercent})`;
+      };
+      window.addEventListener('scroll', updateScrollProgress);
+      window.addEventListener('resize', updateScrollProgress);
+      updateScrollProgress();
+
 
       // Mobile menu
       const menuToggle = document.getElementById('mobile-menu-toggle');

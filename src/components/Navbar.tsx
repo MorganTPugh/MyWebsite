@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Download, FileText, Briefcase, Sparkles } from "lucide-react";
+import { isCorporateSite } from "../siteMode";
 
 interface NavbarProps {
   activePage: "career" | "consulting";
@@ -128,27 +129,29 @@ export default function Navbar({ activePage, setActivePage, onScrollToSection }:
           )}
 
           {/* Toggle Button for Consulting */}
-          <button
-            id="nav-consulting-toggle"
-            onClick={() => handlePageSwitch(activePage === "career" ? "consulting" : "career")}
-            className={`font-sans text-sm font-medium px-4 py-1.5 rounded-full border transition-all cursor-pointer flex items-center gap-2 ${
-              activePage === "consulting"
-                ? "bg-accent-blue/15 text-accent-blue border-accent-blue/30 hover:bg-accent-blue/25"
-                : "bg-transparent text-accent-orange border-accent-orange/30 hover:border-accent-orange hover:bg-accent-orange/5"
-            }`}
-          >
-            {activePage === "career" ? (
-              <>
-                <Sparkles className="w-3.5 h-3.5" />
-                Consulting Services
-              </>
-            ) : (
-              <>
-                <Briefcase className="w-3.5 h-3.5" />
-                View Full Resume
-              </>
-            )}
-          </button>
+          {!isCorporateSite && (
+            <button
+              id="nav-consulting-toggle"
+              onClick={() => handlePageSwitch(activePage === "career" ? "consulting" : "career")}
+              className={`font-sans text-sm font-medium px-4 py-1.5 rounded-full border transition-all cursor-pointer flex items-center gap-2 ${
+                activePage === "consulting"
+                  ? "bg-accent-blue/15 text-accent-blue border-accent-blue/30 hover:bg-accent-blue/25"
+                  : "bg-transparent text-accent-orange border-accent-orange/30 hover:border-accent-orange hover:bg-accent-orange/5"
+              }`}
+            >
+              {activePage === "career" ? (
+                <>
+                  <Sparkles className="w-3.5 h-3.5" />
+                  Consulting Services
+                </>
+              ) : (
+                <>
+                  <Briefcase className="w-3.5 h-3.5" />
+                  View Full Resume
+                </>
+              )}
+            </button>
+          )}
 
           <button
             id="nav-contact"
@@ -252,14 +255,16 @@ export default function Navbar({ activePage, setActivePage, onScrollToSection }:
           )}
 
           {/* Toggle between views in mobile */}
-          <button
-            id="mobile-nav-toggle"
-            onClick={() => handlePageSwitch(activePage === "career" ? "consulting" : "career")}
-            className="text-left font-sans text-base font-semibold text-accent-orange py-2 flex items-center gap-2"
-          >
-            <Sparkles className="w-5 h-5" />
-            {activePage === "career" ? "Go to Consulting Services" : "Go to Career Portfolio"}
-          </button>
+          {!isCorporateSite && (
+            <button
+              id="mobile-nav-toggle"
+              onClick={() => handlePageSwitch(activePage === "career" ? "consulting" : "career")}
+              className="text-left font-sans text-base font-semibold text-accent-orange py-2 flex items-center gap-2"
+            >
+              <Sparkles className="w-5 h-5" />
+              {activePage === "career" ? "Go to Consulting Services" : "Go to Career Portfolio"}
+            </button>
+          )}
 
           <button
             id="mobile-nav-contact"
