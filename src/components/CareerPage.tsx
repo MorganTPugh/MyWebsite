@@ -421,7 +421,7 @@ export default function CareerPage({
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SKILL_CATEGORIES.map((category, index) => {
               const isOrange = index % 2 === 0;
               return (
@@ -629,29 +629,20 @@ export default function CareerPage({
               {isCorporateSite ? (
                 <>
                   <p>
-                    I grew up in a suburb of Kansas City, Kansas — deep in Chiefs and Royals territory — with a
-                    childhood built around sports. Soccer, basketball, volleyball, softball: if it involved a team
-                    and competition, I was in. That instinct toward collaboration and friendly pressure never
-                    really left me.
+                    Rooted in team sports, driven by strategy, and energized by building tools that work.
                   </p>
 
                   <p>
-                    I went to the University of Kansas to study finance, joined the rowing team, supervised
-                    intramural sports, and found, through my finance courses, that I genuinely loved thinking about
-                    how to build and protect value over time. After graduation, I packed up and moved to Denver and
-                    haven&apos;t looked back.
+                    Growing up in Kansas City playing competitive sports—and later joining the rowing crew at the
+                    University of Kansas—instilled in me a deep instinct for collaboration and adaptability.
+                    Studying finance at KU showed me how much I love the mechanics of building and protecting value
+                    over time, a strategic mindset that eventually brought me west to Denver.
                   </p>
 
                   <p>
-                    Colorado keeps me busy and thoroughly entertained. In a typical week I can be found either
-                    mountain biking or skiing, playing volleyball, enjoying the many parks, or at a library with my
-                    husband learning about whatever thing is exciting that month.
-                  </p>
-
-                  <p>
-                    I&apos;ve always had a passion for animals. I started volunteering at shelters when I was 16 and
-                    still do — currently walking dogs at True Companions and fostering on and off. That&apos;s why I
-                    built{" "}
+                    When I&rsquo;m not mountain biking, skiing, or playing volleyball across Colorado, I apply that
+                    same focus to hands-on projects. Driven by a lifelong commitment to animal welfare, I
+                    solo-designed and coded{" "}
                     <a
                       href="https://rescue-kit.org"
                       target="_blank"
@@ -660,16 +651,15 @@ export default function CareerPage({
                     >
                       Rescue-kit
                     </a>
-                    , a free tool/website I designed and coded solo to help rescue organizations and fosters create
-                    digital and printable flyers and outreach materials without any kind of design or technical
-                    experience — this kind of passion project reminds me why I love finding problems worth solving.
+                    , a free platform that helps shelters and foster caregivers create promotional outreach
+                    materials without needing design expertise. Building it outside my day-to-day corporate scope
+                    was a great way to expand my technical skill set and solve a high-impact, real-world problem.
                   </p>
 
                   <p>
-                    Financially, I&apos;m wired toward long-term thinking. I&apos;ve reached{" "}
-                    <strong className="text-primary font-bold">Coast FIRE</strong>, and I&apos;m working toward full
-                    financial independence, which means I think about money the way I think about business
-                    strategy: compound what matters, cut the drag, stay patient.
+                    I&apos;m a passionate advocate of financial independence and early retirement. Financially and
+                    professionally, I think like a long-term operator: compound what matters, cut the drag, and
+                    stay patient as momentum builds.
                   </p>
                 </>
               ) : (
