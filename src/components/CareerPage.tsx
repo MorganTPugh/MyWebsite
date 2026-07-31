@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { IMPACT_HIGHLIGHTS, SKILL_CATEGORIES, CAREER_TIMELINE, EDUCATION, PERSONAL_FACTS } from "../data";
 import { isCorporateSite } from "../siteMode";
+import { submitToFormspree } from "../formspree";
 
 // Custom Counter Component for metric animation when in view
 function MetricCounter({ value, label }: { value: string; label?: string }) {
@@ -150,6 +151,7 @@ export default function CareerPage({
   const [formSubject, setFormSubject] = useState("General Collaboration");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formError, setFormError] = useState(false);
 
   const subtitles = [
     "73% YoY product growth across 28 markets.",
@@ -806,15 +808,24 @@ export default function CareerPage({
             {/* Right side: Email Form (7 cols) */}
             <div className="lg:col-span-7 bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-sm shadow-xl w-full">
               {!isSubmitted ? (
-                <form 
-                  onSubmit={(e) => {
+                <form
+                  onSubmit={async (e) => {
                     e.preventDefault();
                     if (!formName || !formEmail || !formMessage) return;
                     setIsSubmitting(true);
-                    setTimeout(() => {
-                      setIsSubmitting(false);
+                    setFormError(false);
+                    const ok = await submitToFormspree({
+                      name: formName,
+                      email: formEmail,
+                      subject: formSubject,
+                      message: formMessage,
+                    });
+                    setIsSubmitting(false);
+                    if (ok) {
                       setIsSubmitted(true);
-                    }, 1200);
+                    } else {
+                      setFormError(true);
+                    }
                   }}
                   className="space-y-4"
                 >
@@ -895,6 +906,13 @@ export default function CareerPage({
                       </span>
                     )}
                   </button>
+
+                  {formError && (
+                    <p className="text-red-400 text-xs text-center">
+                      Something went wrong sending your message. Please try again, or email me directly at{" "}
+                      <a href="mailto:morgantpugh3@gmail.com" className="underline">morgantpugh3@gmail.com</a>.
+                    </p>
+                  )}
                 </form>
               ) : (
                 <div className="text-center py-12 space-y-6">

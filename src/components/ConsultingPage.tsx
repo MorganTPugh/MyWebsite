@@ -13,6 +13,7 @@ import {
   ArrowUpRight
 } from "lucide-react";
 import { SERVICES } from "../data";
+import { submitToFormspree } from "../formspree";
 
 // Helper to render lucide icons dynamically based on name string
 function ServiceIcon({ name, className }: { name: string; className: string }) {
@@ -37,6 +38,7 @@ export default function ConsultingPage() {
   const [formMessage, setFormMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formError, setFormError] = useState(false);
 
   const handleInquireClick = (serviceTitle: string) => {
     setSelectedService(serviceTitle);
@@ -330,15 +332,24 @@ export default function ConsultingPage() {
             {/* Right side: Email Form (7 cols) */}
             <div className="lg:col-span-7 bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-sm shadow-xl w-full">
               {!isSubmitted ? (
-                <form 
-                  onSubmit={(e) => {
+                <form
+                  onSubmit={async (e) => {
                     e.preventDefault();
                     if (!formName || !formEmail || !formMessage) return;
                     setIsSubmitting(true);
-                    setTimeout(() => {
-                      setIsSubmitting(false);
+                    setFormError(false);
+                    const ok = await submitToFormspree({
+                      name: formName,
+                      email: formEmail,
+                      subject: selectedService ? `Consulting: ${selectedService}` : "General Consulting Inquiry",
+                      message: formMessage,
+                    });
+                    setIsSubmitting(false);
+                    if (ok) {
                       setIsSubmitted(true);
-                    }, 1200);
+                    } else {
+                      setFormError(true);
+                    }
                   }}
                   className="space-y-4"
                 >
@@ -430,6 +441,13 @@ export default function ConsultingPage() {
                       </span>
                     )}
                   </button>
+
+                  {formError && (
+                    <p className="text-red-400 text-xs text-center">
+                      Something went wrong sending your inquiry. Please try again, or email me directly at{" "}
+                      <a href="mailto:morgantpugh3@gmail.com" className="underline">morgantpugh3@gmail.com</a>.
+                    </p>
+                  )}
                 </form>
               ) : (
                 <div className="text-center py-12 space-y-6">
