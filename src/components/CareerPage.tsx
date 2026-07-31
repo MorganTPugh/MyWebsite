@@ -557,19 +557,20 @@ export default function CareerPage({
       <section id="about-me" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-extrabold text-primary tracking-tight mb-5 text-left">
+            The person <span className="text-accent-orange italic font-serif font-semibold">behind</span> the portfolio.
+          </h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:items-stretch items-start">
             
             {/* Left side column: Photo placeholder and personal stats */}
-            <div className="lg:col-span-5 space-y-6">
-              <div className="text-left space-y-2">
-                <h2 className="text-2xl md:text-4xl font-serif font-extrabold text-primary tracking-tight leading-tight">
-                  The person <span className="text-accent-orange italic font-serif font-semibold">behind</span> the portfolio.
-                </h2>
-              </div>
+            <div className="lg:col-span-5 flex flex-col lg:justify-start gap-3 lg:h-full">
 
               {/* Styled Headshot Photo Area */}
               {/* PLACEHOLDER: Professional headshot, warm lighting preferred */}
-              <div className="relative group rounded-organic-2 hover:rounded-organic-3 overflow-hidden shadow-xl aspect-[4/5] bg-gradient-to-tr from-primary to-accent-blue/30 flex flex-col justify-end p-8 border border-gray-100/80 transition-all duration-700 ease-in-out">
+              <div className={`relative group rounded-organic-2 hover:rounded-organic-3 overflow-hidden shadow-xl bg-gradient-to-tr from-primary to-accent-blue/30 flex flex-col justify-end border border-gray-100/80 transition-all duration-700 ease-in-out w-full lg:w-[83%] ${
+                isCorporateSite ? "aspect-[4/5] p-6" : "aspect-[4/5] p-8"
+              }`}>
                 {!imageError ? (
                   <img
                     src="/assets/images/morgan-about-2.jpg"
@@ -579,24 +580,28 @@ export default function CareerPage({
                       setImageError(true);
                     }}
                     referrerPolicy="no-referrer"
-                    className="absolute inset-0 w-full h-full object-cover object-[10%_75%] scale-[1.6] transition-transform duration-500 group-hover:scale-[1.65]"
+                    className="absolute inset-0 w-full h-full object-cover object-[0%_85%] scale-[1.6] transition-transform duration-500 group-hover:scale-[1.65]"
                   />
                 ) : (
                   <div className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-80" />
                 )}
-                
+
                 {/* Visual mountain skyline vector behind */}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/30 to-transparent" />
-                
+
                 {/* Overlay content explaining portrait */}
-                <div className="relative z-10 text-white space-y-2">
-                  <div className="w-10 h-10 rounded-full bg-accent-orange/20 border border-accent-orange flex items-center justify-center text-accent-orange mb-3">
-                    <Compass className="w-5 h-5 animate-pulse" />
+                <div className={`relative z-10 text-white ${isCorporateSite ? "space-y-1" : "space-y-2"}`}>
+                  <div className={`rounded-full bg-accent-orange/20 border border-accent-orange flex items-center justify-center text-accent-orange ${
+                    isCorporateSite ? "w-7 h-7 mb-1.5" : "w-10 h-10 mb-3"
+                  }`}>
+                    <Compass className={isCorporateSite ? "w-3.5 h-3.5 animate-pulse" : "w-5 h-5 animate-pulse"} />
                   </div>
-                  <span className="font-mono text-[11px] font-bold tracking-widest text-accent-blue uppercase block">
+                  <span className={`font-mono font-bold tracking-widest text-accent-blue uppercase block ${
+                    isCorporateSite ? "text-[9px]" : "text-[11px]"
+                  }`}>
                     Denver, Colorado
                   </span>
-                  <h3 className="font-sans font-bold text-xl text-white">
+                  <h3 className={`font-sans font-bold text-white ${isCorporateSite ? "text-base" : "text-xl"}`}>
                     Morgan Pugh
                   </h3>
                   {imageError && (
@@ -614,103 +619,107 @@ export default function CareerPage({
               </div>
 
               {/* Personal Fact Badges */}
-              <div className="space-y-1">
+              <div className="space-y-2 w-full lg:w-[83%]">
                 {PERSONAL_FACTS.map((fact, idx) => (
-                  <div key={idx} className="flex items-center space-x-3 bg-neutral-light px-2.5 py-1 rounded-xl border border-gray-100">
-                    <span className="text-base">{fact.icon}</span>
-                    <span className="font-sans text-sm font-semibold text-text-primary">{fact.label}</span>
+                  <div key={idx} className={`flex items-center space-x-3 bg-neutral-light rounded-xl border border-gray-100 ${
+                    isCorporateSite ? "px-3 py-1.5" : "px-3.5 py-2"
+                  }`}>
+                    <span className={isCorporateSite ? "text-base" : "text-lg"}>{fact.icon}</span>
+                    <span className={`font-sans font-semibold text-text-primary ${isCorporateSite ? "text-sm" : "text-base"}`}>{fact.label}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Right side column: Personal Story (Conversational & Engaging) */}
-            <div className="lg:col-span-7 font-sans text-text-secondary text-base leading-relaxed space-y-6 lg:pt-10">
-              {isCorporateSite ? (
-                <>
-                  <p>
-                    Rooted in team sports, driven by strategy, and energized by building tools that work.
-                  </p>
+            <div className="lg:col-span-7 flex flex-col lg:justify-between gap-4 lg:h-full font-sans text-text-secondary text-base leading-relaxed">
+              <div className="space-y-6">
+                {isCorporateSite ? (
+                  <>
+                    <p>
+                      Rooted in team sports, driven by strategy, and energized by building tools that work.
+                    </p>
 
-                  <p>
-                    Growing up in Kansas City playing competitive sports—and later joining the rowing crew at the
-                    University of Kansas—instilled in me a deep instinct for collaboration and adaptability.
-                    Studying finance at KU showed me how much I love the mechanics of building and protecting value
-                    over time, a strategic mindset that eventually brought me west to Denver.
-                  </p>
+                    <p>
+                      Growing up in Kansas City playing competitive sports—and later joining the rowing crew at the
+                      University of Kansas—instilled in me a deep instinct for collaboration and adaptability.
+                      Studying finance at KU showed me how much I love the mechanics of building and protecting value
+                      over time, a strategic mindset that eventually brought me west to Denver.
+                    </p>
 
-                  <p>
-                    When I&rsquo;m not mountain biking, skiing, or playing volleyball across Colorado, I apply that
-                    same focus to hands-on projects. Driven by a lifelong commitment to animal welfare, I
-                    solo-designed and coded{" "}
-                    <a
-                      href="https://rescue-kit.org"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-accent-orange font-bold hover:underline"
-                    >
-                      Rescue-kit
-                    </a>
-                    , a free platform that helps shelters and foster caregivers create promotional outreach
-                    materials without needing design expertise. Building it outside my day-to-day corporate scope
-                    was a great way to expand my technical skill set and solve a high-impact, real-world problem.
-                  </p>
+                    <p>
+                      When I&rsquo;m not mountain biking, skiing, or playing volleyball across Colorado, I apply that
+                      same focus to hands-on projects. Driven by a lifelong commitment to animal welfare, I
+                      solo-designed and coded{" "}
+                      <a
+                        href="https://rescue-kit.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-accent-orange font-bold hover:underline"
+                      >
+                        Rescue-kit
+                      </a>
+                      , a free platform that helps shelters and foster caregivers create promotional outreach
+                      materials without needing design expertise. Building it outside my day-to-day corporate scope
+                      was a great way to expand my technical skill set and solve a high-impact, real-world problem.
+                    </p>
 
-                  <p>
-                    I&apos;m a passionate advocate of financial independence and early retirement. Financially and
-                    professionally, I think like a long-term operator: compound what matters, cut the drag, and
-                    stay patient as momentum builds.
-                  </p>
-                </>
-              ) : (
-                <>
-                  <p>
-                    I grew up in Overland Park, Kansas — deep in Chiefs and Royals territory — with a childhood built
-                    around sports. Soccer, basketball, volleyball, softball: if it involved a team and competition, I
-                    was in. That instinct toward collaboration and friendly pressure never really left me.
-                  </p>
+                    <p>
+                      I&apos;m a passionate advocate of financial independence and early retirement. Financially and
+                      professionally, I think like a long-term operator: compound what matters, cut the drag, and
+                      stay patient as momentum builds.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p>
+                      I grew up in Overland Park, Kansas — deep in Chiefs and Royals territory — with a childhood built
+                      around sports. Soccer, basketball, volleyball, softball: if it involved a team and competition, I
+                      was in. That instinct toward collaboration and friendly pressure never really left me.
+                    </p>
 
-                  <p>
-                    I headed to the University of Kansas to study finance, joined the rowing team, refereed intramural
-                    sports, and found I genuinely loved thinking about how to build and protect value over time. After
-                    graduation, I packed up for Denver and haven&apos;t looked back.
-                  </p>
+                    <p>
+                      I headed to the University of Kansas to study finance, joined the rowing team, refereed intramural
+                      sports, and found I genuinely loved thinking about how to build and protect value over time. After
+                      graduation, I packed up for Denver and haven&apos;t looked back.
+                    </p>
 
-                  <p>
-                    Colorado keeps me busy — mountain biking, skiing, volleyball in Wash Park, more hiking than I can
-                    count. I love to travel, and I plan obsessively and optimize every dollar when I do: a 12-person
-                    micro-wedding in Costa Rica, a bachelorette for 10 in Mexico City, adventures across Portugal, Spain,
-                    Canada, and Hawaii. I genuinely love perfecting travel logistics — the research, the itineraries, the
-                    moment it all clicks.
-                  </p>
+                    <p>
+                      Colorado keeps me busy — mountain biking, skiing, volleyball in Wash Park, more hiking than I can
+                      count. I love to travel, and I plan obsessively and optimize every dollar when I do: a 12-person
+                      micro-wedding in Costa Rica, a bachelorette for 10 in Mexico City, adventures across Portugal, Spain,
+                      Canada, and Hawaii. I genuinely love perfecting travel logistics — the research, the itineraries, the
+                      moment it all clicks.
+                    </p>
 
-                  <p>
-                    Animals have always been part of my life. I started volunteering at shelters when I was 16 and still
-                    do — currently walking dogs at True Companions and fostering on and off for years. That&apos;s also
-                    why I built{" "}
-                    <a
-                      href="https://rescue-kit.org"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-accent-orange font-bold hover:underline"
-                    >
-                      Rescue-kit
-                    </a>
-                    , a free tool I designed and coded solo to help rescue organizations and fosters create digital and
-                    printable flyers and outreach materials without any kind of design or technical experience — the
-                    kind of side project that reminds me why I love finding problems worth solving.
-                  </p>
+                    <p>
+                      Animals have always been part of my life. I started volunteering at shelters when I was 16 and still
+                      do — currently walking dogs at True Companions and fostering on and off for years. That&apos;s also
+                      why I built{" "}
+                      <a
+                        href="https://rescue-kit.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-accent-orange font-bold hover:underline"
+                      >
+                        Rescue-kit
+                      </a>
+                      , a free tool I designed and coded solo to help rescue organizations and fosters create digital and
+                      printable flyers and outreach materials without any kind of design or technical experience — the
+                      kind of side project that reminds me why I love finding problems worth solving.
+                    </p>
 
-                  <p>
-                    Financially, I&apos;m wired toward long-term thinking. I&apos;ve reached{" "}
-                    <strong className="text-primary font-bold">Coast FIRE</strong> by age 48, and I&apos;m working toward
-                    full financial independence, which means I think about money the way I think about business
-                    strategy: compound what matters, cut the drag, stay patient.
-                  </p>
-                </>
-              )}
+                    <p>
+                      Financially, I&apos;m wired toward long-term thinking. I&apos;ve reached{" "}
+                      <strong className="text-primary font-bold">Coast FIRE</strong> by age 48, and I&apos;m working toward
+                      full financial independence, which means I think about money the way I think about business
+                      strategy: compound what matters, cut the drag, stay patient.
+                    </p>
+                  </>
+                )}
+              </div>
 
-              <div className="bg-neutral-light border-l-4 border-accent-orange p-5 rounded-r-2xl mt-8">
+              <div className="bg-neutral-light border-l-4 border-accent-orange p-5 rounded-r-2xl">
                 <span className="block font-sans font-bold text-primary text-sm mb-1">
                   THE GENERALIST ARCHETYPE: SYSTEMS THINKER
                 </span>
@@ -741,21 +750,17 @@ export default function CareerPage({
           </div>
 
           <p className="font-sans text-white/70 text-base md:text-lg max-w-2xl mx-auto text-center leading-relaxed">
-            I&apos;m currently open to senior strategy, product, and GTM roles, along with select consulting
-            projects — including project management, money coaching, or other opportunities where my skills
-            and background could add value!
+            I&apos;m open to senior strategy, product, and GTM roles, plus select consulting work — project
+            management, money coaching, and beyond. Fill out the form or connect with me on LinkedIn — I look
+            forward to hearing from you!
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8 text-left items-start">
             {/* Left side: Information (5 cols) */}
             <div className="lg:col-span-5 space-y-6 flex flex-col justify-between self-stretch">
               <div className="space-y-6">
-                <p className="font-sans text-white/70 text-sm leading-relaxed">
-                  Have an open role, a project idea, or just want to chat? Fill out the form, or reach out directly on LinkedIn. I look forward to connecting!
-                </p>
-
                 {/* LinkedIn Card */}
-                <a 
+                <a
                   id="contact-linkedin-link"
                   href="https://www.linkedin.com/in/morgan-pugh-392819100/"
                   target="_blank"
