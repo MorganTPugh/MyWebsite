@@ -16,7 +16,10 @@ import {
   Linkedin, 
   MapPin,
   ChevronRight,
-  Sparkles
+  Sparkles,
+  Layers,
+  BarChart3,
+  Wrench
 } from "lucide-react";
 import { IMPACT_HIGHLIGHTS, SKILL_CATEGORIES, CAREER_TIMELINE, EDUCATION, PERSONAL_FACTS } from "../data";
 import { isCorporateSite } from "../siteMode";
@@ -135,6 +138,27 @@ function NetworkBackground() {
   );
 }
 
+const SECTIONS = [
+  { id: "hero", label: "Intro" },
+  { id: "about", label: "Philosophy" },
+  { id: "impact", label: "Impact" },
+  { id: "skills", label: "Expertise" },
+  { id: "experience", label: "Timeline" },
+  { id: "about-me", label: "About Me" },
+  { id: "contact", label: "Contact" }
+];
+
+const getCategoryIcon = (title: string, className = "w-5 h-5") => {
+  const t = title.toLowerCase();
+  if (t.includes("strategy") || t.includes("market")) return <TrendingUp className={className} />;
+  if (t.includes("product")) return <Layers className={className} />;
+  if (t.includes("leadership") || t.includes("cross")) return <Users className={className} />;
+  if (t.includes("data") || t.includes("analytics")) return <BarChart3 className={className} />;
+  if (t.includes("tools") || t.includes("platforms")) return <Wrench className={className} />;
+  if (t.includes("ai") || t.includes("emerging") || t.includes("tech")) return <Sparkles className={className} />;
+  return <Compass className={className} />;
+};
+
 export default function CareerPage({ 
   onScrollToSection, 
   onNavigateToConsulting 
@@ -152,6 +176,48 @@ export default function CareerPage({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formError, setFormError] = useState(false);
+  
+  const [activeSection, setActiveSection] = useState("hero");
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  // Monitor scrolling to track active section and scroll progress percentage
+  useEffect(() => {
+    // Enable scroll snapping on html container for CareerPage
+    document.documentElement.classList.add("snap-y", "snap-proximity", "scroll-smooth");
+
+    const handleScroll = () => {
+      // Calculate overall page scroll progress
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalHeight > 0) {
+        setScrollProgress(window.scrollY / totalHeight);
+      }
+
+      // Track active section
+      const sections = ["hero", "about", "impact", "skills", "experience", "about-me", "contact"];
+      const scrollPos = window.scrollY + window.innerHeight / 3;
+
+      for (const sectionId of sections) {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Trigger initially
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      // Clean up scroll snapping when leaving CareerPage
+      document.documentElement.classList.remove("snap-y", "snap-proximity", "scroll-smooth");
+    };
+  }, []);
 
   const subtitles = [
     "73% YoY product growth across 28 markets.",
@@ -169,7 +235,7 @@ export default function CareerPage({
   return (
     <div className="">
       {/* 1. Hero Section */}
-      <section id="hero" className="relative min-h-[90vh] flex items-center bg-primary text-white overflow-hidden pt-28 pb-16">
+      <section id="hero" className="relative min-h-[90vh] flex items-center bg-primary text-white overflow-hidden pt-28 pb-16 snap-start scroll-mt-24">
         <NetworkBackground />
         
         {/* Subtle grid layer */}
@@ -294,7 +360,7 @@ export default function CareerPage({
       </section>
 
       {/* 2. What I Do / Positioning Section */}
-      <section id="about" className="py-16 bg-white relative overflow-hidden">
+      <section id="about" className="py-16 bg-white relative overflow-hidden snap-start scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
           <div className="text-center max-w-3xl mx-auto space-y-4 mb-10">
@@ -364,7 +430,7 @@ export default function CareerPage({
       </section>
 
       {/* 3. Impact Highlights */}
-      <section id="impact" className="py-14 bg-neutral-light relative border-y border-gray-100">
+      <section id="impact" className="py-14 bg-neutral-light relative border-y border-gray-100 snap-start scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
 
           <div className="text-center max-w-2xl mx-auto space-y-2 mb-8">
@@ -406,7 +472,7 @@ export default function CareerPage({
       </section>
 
       {/* 4. Skills & Expertise */}
-      <section id="skills" className="py-14 bg-white">
+      <section id="skills" className="py-14 bg-white snap-start scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
 
           <div className="text-center max-w-2xl mx-auto space-y-2 mb-8">
@@ -427,31 +493,43 @@ export default function CareerPage({
               return (
                 <div
                   key={index}
-                  className={`bg-neutral-light/40 hover:bg-white p-5 md:p-6 rounded-2xl border transition-all duration-300 flex flex-col justify-between group/card ${
+                  className={`relative overflow-hidden bg-white hover:bg-neutral-light/20 p-6 rounded-3xl border transition-all duration-300 flex flex-col justify-between group/card ${
                     isOrange
-                      ? 'border-accent-orange/15 hover:border-accent-orange/40 hover:shadow-xl hover:shadow-accent-orange/[0.04]'
-                      : 'border-accent-blue/15 hover:border-accent-blue/40 hover:shadow-xl hover:shadow-accent-blue/[0.04]'
+                      ? 'border-gray-100 hover:border-accent-orange/30 shadow-[0_4px_20px_rgba(0,0,0,0.01)] hover:shadow-[0_12px_30px_rgba(255,78,0,0.06)]'
+                      : 'border-gray-100 hover:border-accent-blue/30 shadow-[0_4px_20px_rgba(0,0,0,0.01)] hover:shadow-[0_12px_30px_rgba(0,163,255,0.06)]'
                   }`}
                 >
-                  <div>
-                    <h3 className={`font-sans font-bold text-base text-primary mb-3 pb-2 border-b flex items-center justify-between transition-colors ${
-                      isOrange ? 'border-accent-orange/10 group-hover/card:border-accent-orange/30' : 'border-accent-blue/10 group-hover/card:border-accent-blue/30'
+                  {/* Subtle Background Icon Watermark */}
+                  <div className={`absolute -right-4 -bottom-4 w-28 h-28 transition-transform duration-500 group-hover/card:scale-110 opacity-[0.02] group-hover/card:opacity-[0.05] pointer-events-none ${
+                    isOrange ? 'text-accent-orange' : 'text-accent-blue'
+                  }`}>
+                    {getCategoryIcon(category.title, "w-full h-full")}
+                  </div>
+
+                  <div className="relative z-10">
+                    <h3 className={`font-sans font-bold text-base text-primary mb-4 pb-2.5 border-b flex items-center gap-2.5 transition-colors ${
+                      isOrange 
+                        ? 'border-accent-orange/10 group-hover/card:border-accent-orange/30' 
+                        : 'border-accent-blue/10 group-hover/card:border-accent-blue/30'
                     }`}>
-                      <span>{category.title}</span>
-                      <span className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        isOrange
-                          ? 'bg-accent-orange shadow-[0_0_8px_rgba(255,78,0,0.4)] group-hover/card:scale-125'
-                          : 'bg-accent-blue shadow-[0_0_8px_rgba(0,163,255,0.4)] group-hover/card:scale-125'
-                      }`} />
+                      <div className={`p-1.5 rounded-lg transition-all duration-300 ${
+                        isOrange 
+                          ? 'bg-accent-orange/10 text-accent-orange group-hover/card:bg-accent-orange group-hover/card:text-white' 
+                          : 'bg-accent-blue/10 text-accent-blue group-hover/card:bg-accent-blue group-hover/card:text-white'
+                      }`}>
+                        {getCategoryIcon(category.title, "w-4 h-4")}
+                      </div>
+                      <span className="font-serif font-extrabold tracking-tight text-primary text-base">{category.title}</span>
                     </h3>
+                    
                     <div className="flex flex-wrap gap-1.5">
                       {category.skills.map((skill, sIdx) => (
                         <span
                           key={sIdx}
-                          className={`font-sans text-sm font-medium px-3 py-1.5 rounded-lg border shadow-[0_1px_2px_rgba(0,0,0,0.02)] transition-all duration-200 cursor-default ${
+                          className={`font-sans text-xs font-semibold px-2.5 py-1.5 rounded-lg border transition-all duration-200 cursor-default ${
                             isOrange
-                              ? 'bg-white text-text-primary border-gray-200/70 hover:border-accent-orange/40 hover:bg-accent-orange/[0.03] hover:text-accent-orange hover:-translate-y-0.5'
-                              : 'bg-white text-text-primary border-gray-200/70 hover:border-accent-blue/40 hover:bg-accent-blue/[0.03] hover:text-accent-blue hover:-translate-y-0.5'
+                              ? 'bg-white/70 text-text-primary border-gray-200/50 hover:border-accent-orange/40 hover:bg-accent-orange/[0.04] hover:text-accent-orange hover:shadow-[0_2px_8px_rgba(255,78,0,0.05)] hover:-translate-y-0.5'
+                              : 'bg-white/70 text-text-primary border-gray-200/50 hover:border-accent-blue/40 hover:bg-accent-blue/[0.04] hover:text-accent-blue hover:shadow-[0_2px_8px_rgba(0,163,255,0.05)] hover:-translate-y-0.5'
                           }`}
                         >
                           {skill}
@@ -467,7 +545,7 @@ export default function CareerPage({
       </section>
 
       {/* 5. Career Timeline */}
-      <section id="experience" className="py-14 bg-neutral-light border-y border-gray-100">
+      <section id="experience" className="py-14 bg-neutral-light border-y border-gray-100 snap-start scroll-mt-24">
         <div className="max-w-5xl mx-auto px-6 md:px-12">
 
           <div className="text-center max-w-2xl mx-auto space-y-2 mb-8">
@@ -530,9 +608,9 @@ export default function CareerPage({
                 <GraduationCap className="w-5 h-5" />
               </div>
               <div>
-                <p className="font-serif font-bold text-primary text-2xl whitespace-nowrap">
+                <h3 className="font-serif font-bold text-primary text-lg md:text-xl lg:text-2xl leading-tight">
                   {EDUCATION.degree}
-                </p>
+                </h3>
                 <p className="font-sans text-sm text-text-secondary">
                   {EDUCATION.school}
                 </p>
@@ -554,7 +632,7 @@ export default function CareerPage({
       </section>
 
       {/* 6. About Me */}
-      <section id="about-me" className="py-16 bg-white">
+      <section id="about-me" className="py-16 bg-white snap-start scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-extrabold text-primary tracking-tight mb-5 text-left">
@@ -736,7 +814,7 @@ export default function CareerPage({
       </section>
 
       {/* 7. Contact Section */}
-      <section id="contact" className="py-16 bg-primary text-white relative overflow-hidden">
+      <section id="contact" className="py-16 bg-primary text-white relative overflow-hidden snap-start scroll-mt-24">
         {/* Abstract background elements */}
         <div className="absolute inset-0 bg-grid-pattern opacity-5" />
         <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-accent-blue/10 blur-3xl" />
@@ -937,6 +1015,49 @@ export default function CareerPage({
           </div>
         </div>
       </section>
+
+      {/* Floating Interactive Scroll Progress & Navigation Gutter */}
+      <div className="fixed left-4 lg:left-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center select-none pointer-events-auto">
+        <div className="relative w-[3px] h-[300px] bg-primary/10 rounded-full flex flex-col justify-start">
+          {/* Scroll-driven progress line */}
+          <div 
+            className="absolute top-0 left-0 w-full bg-gradient-to-b from-accent-orange to-accent-blue rounded-full transition-all duration-75 origin-top"
+            style={{ height: `${scrollProgress * 100}%` }}
+          />
+          
+          {/* Dot Nodes */}
+          <div className="absolute inset-0 flex flex-col justify-between items-center py-1 pointer-events-none">
+            {SECTIONS.map((sec) => {
+              const isActive = activeSection === sec.id;
+              return (
+                <button
+                  key={sec.id}
+                  onClick={() => {
+                    const el = document.getElementById(sec.id);
+                    if (el) {
+                      el.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                  className="group/node relative flex items-center justify-center w-6 h-6 -mx-3 bg-transparent rounded-full pointer-events-auto cursor-pointer focus:outline-none"
+                  title={sec.label}
+                >
+                  {/* Outer active ring / Inner dot */}
+                  <div className={`w-2 h-2 rounded-full border transition-all duration-300 ${
+                    isActive 
+                      ? 'bg-accent-orange border-accent-orange scale-125 shadow-[0_0_8px_rgba(255,78,0,0.5)]'
+                      : 'bg-white border-primary/20 group-hover/node:border-accent-orange/60 group-hover/node:scale-110'
+                  }`} />
+                  
+                  {/* Tooltip on right */}
+                  <span className="absolute left-8 px-2.5 py-1 rounded-lg bg-primary/95 text-white text-[10px] font-bold font-sans tracking-wider uppercase whitespace-nowrap opacity-0 -translate-x-2 group-hover/node:opacity-100 group-hover/node:translate-x-0 transition-all duration-300 pointer-events-none shadow-md backdrop-blur-xs border border-white/5">
+                    {sec.label}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

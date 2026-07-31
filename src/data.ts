@@ -65,7 +65,6 @@ export const SKILL_CATEGORIES = [
       "Stakeholder Alignment",
       "Executive Presentations",
       "Change Management",
-      "Process Improvement",
       "Process Mapping & Workflow Redesign",
       "Operational Excellence",
       "Influencing Without Authority"
