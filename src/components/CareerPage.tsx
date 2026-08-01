@@ -715,20 +715,17 @@ export default function CareerPage({
                 {isCorporateSite ? (
                   <>
                     <p>
-                      Rooted in team sports, driven by strategy, and energized by building tools that work.
+                      I grew up outside of Kansas City, Kansas, in a childhood filled with competitive
+                      sports&mdash;soccer, volleyball, basketball, and softball. I went to the University of Kansas
+                      to study Finance, where I discovered a love for the mechanics of building and protecting value
+                      over time&mdash;a mindset that built my instincts for due diligence and adaptability. My drive
+                      for adventure eventually brought me west to Denver, and I haven&rsquo;t looked back.
                     </p>
 
                     <p>
-                      Growing up in Kansas City playing competitive sports—and later joining the rowing crew at the
-                      University of Kansas—instilled in me a deep instinct for collaboration and adaptability.
-                      Studying finance at KU showed me how much I love the mechanics of building and protecting value
-                      over time, a strategic mindset that eventually brought me west to Denver.
-                    </p>
-
-                    <p>
-                      When I&rsquo;m not mountain biking, skiing, or playing volleyball across Colorado, I apply that
-                      same focus to hands-on projects. Driven by a lifelong commitment to animal welfare, I
-                      solo-designed and coded{" "}
+                      When I&rsquo;m not mountain biking, skiing, or playing volleyball at Denver&rsquo;s parks,
+                      I&rsquo;m building personal projects and learning new tools. Driven by a passion for animal
+                      welfare, I solo-designed and coded{" "}
                       <a
                         href="https://rescue-kit.org"
                         target="_blank"
@@ -737,15 +734,15 @@ export default function CareerPage({
                       >
                         Rescue-kit
                       </a>
-                      , a free platform that helps shelters and foster caregivers create promotional outreach
-                      materials without needing design expertise. Building it outside my day-to-day corporate scope
-                      was a great way to expand my technical skill set and solve a high-impact, real-world problem.
+                      , a free platform that helps shelter fosters and volunteers scale and optimize their marketing
+                      materials without needing design expertise. In building this, I embraced AI-assisted web
+                      development and applied my UI/UX skills to solve a real-world problem I care deeply about.
                     </p>
 
                     <p>
-                      I&apos;m a passionate advocate of financial independence and early retirement. Financially and
-                      professionally, I think like a long-term operator: compound what matters, cut the drag, and
-                      stay patient as momentum builds.
+                      I&rsquo;m also passionate about financial independence. Financially and professionally, I
+                      think like a long-term operator: compound what matters, cut the drag, and stay patient as
+                      momentum builds.
                     </p>
                   </>
                 ) : (
