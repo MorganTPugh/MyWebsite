@@ -40,7 +40,6 @@ export const SKILL_CATEGORIES = [
       "Pricing Strategy",
       "Market Research",
       "Financial Analysis",
-      "Revenue Optimization",
       "Business Case Development",
       "Competitive Positioning"
     ]
@@ -76,7 +75,6 @@ export const SKILL_CATEGORIES = [
       "Risk Assessment & Segmentation",
       "Predictive Model Evaluation",
       "Claims Data Analysis",
-      "KPI Tracking",
       "Attrition Analysis",
       "Google Data Analytics (Certified)",
       "Data Storytelling",
@@ -87,7 +85,6 @@ export const SKILL_CATEGORIES = [
     title: "Tools & Platforms",
     skills: [
       "Salesforce Lightning",
-      "Jira",
       "Smartsheet",
       "Airtable",
       "Notion",
@@ -137,7 +134,7 @@ export const CAREER_TIMELINE: Experience[] = [
     location: "Denver, CO (Remote)",
     bullets: [
       "Spearheaded post-sale process modernization initiative saving ~1 hour per sold case for 80+ employees across 28 markets by leading DocuSign automation and complete documentation redesign.",
-      "Led go-to-market strategy for level-funded product across 14 markets, overseeing pricing methodology redesign, sales training, competitive positioning, and customer experience improvements.",
+      "Contributed to the go-to-market strategy for level-funded product across 14 markets, supporting pricing methodology redesign, sales training, competitive positioning, and customer experience improvements.",
       "Built and managed company-wide support infrastructure (mailbox + custom AI chatbot) enabling 500+ employees to conduct expert-level product conversations with external broker partners.",
       "Led a broader AI-assisted competitive intelligence effort — including a multi-year analysis of competitor 10-K filings alongside other market and pricing data — synthesizing findings into executive-ready strategy and contract negotiation recommendations."
     ]

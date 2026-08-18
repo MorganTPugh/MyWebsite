@@ -421,7 +421,7 @@ export default function CareerPage({
               </div>
               <p className="font-sans text-text-secondary text-sm md:text-base leading-relaxed">
                 I don&apos;t pitch fuzzy ideas — I build the case. Every strategy I deliver is grounded in
-                competitive analysis, customer feedback, and financial modeling, backed by a risk management
+                competitive analysis, customer feedback, and financial analysis, backed by a risk management
                 foundation that balances ambitious growth with precise execution.
               </p>
             </div>
