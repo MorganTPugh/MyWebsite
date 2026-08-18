@@ -220,7 +220,7 @@ export default function CareerPage({
   }, []);
 
   const subtitles = [
-    "73% YoY product growth across 28 markets.",
+    "73% YoY product growth across 14+ markets.",
     "1,000+ hours saved through process modernization.",
     "Cross-functional leader across 30+ teams."
   ];
