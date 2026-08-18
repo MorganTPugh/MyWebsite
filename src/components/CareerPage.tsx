@@ -349,7 +349,7 @@ export default function CareerPage({
             {/* Satellite widgets floating around representing pieces of systems */}
             <div className="absolute -top-4 -left-4 p-3 bg-primary/95 border border-white/15 rounded-xl flex items-center gap-2 backdrop-blur-md shadow-2xl hover:scale-105 transition-transform">
               <TrendingUp className="w-4 h-4 text-accent-orange animate-pulse" />
-              <span className="font-mono text-xs font-bold text-white tracking-wide">GTM Execution</span>
+              <span className="font-mono text-xs font-bold text-white tracking-wide">Product Management</span>
             </div>
             <div className="absolute -bottom-4 -right-4 p-3 bg-primary/95 border border-white/15 rounded-xl flex items-center gap-2 backdrop-blur-md shadow-2xl hover:scale-105 transition-transform">
               <Cpu className="w-4 h-4 text-accent-blue" />
@@ -823,12 +823,6 @@ export default function CareerPage({
               Whether you&apos;re hiring, collaborating, or just curious — <span className="text-accent-orange italic font-serif font-semibold">reach out.</span>
             </h2>
           </div>
-
-          <p className="font-sans text-white/70 text-base md:text-lg max-w-2xl mx-auto text-center leading-relaxed">
-            I&apos;m open to senior strategy, product, and GTM roles, plus select consulting work — project
-            management, money coaching, and beyond. Fill out the form or connect with me on LinkedIn — I look
-            forward to hearing from you!
-          </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8 text-left items-start">
             {/* Left side: Information (5 cols) */}

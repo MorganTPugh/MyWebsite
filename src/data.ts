@@ -5,7 +5,7 @@ export const IMPACT_HIGHLIGHTS: ImpactHighlight[] = [
     metric: "73%",
     metricLabel: "YoY Growth",
     headline: "Creating an enterprise growth engine.",
-    story: "Inherited a product that had been deprioritized for years. As a 4 person team, we rebuilt the go-to-market motion - redesigning and training on pricing methodologies, training 30+ sales teams on consultative strategies, and leading cross-functional coordination across dozens of teams. This has resulted in substantial growth rates for 4 years in a row, including 73% YoY for 2026, alongside brag-worthy profitability figures.",
+    story: "Inherited a product that had been deprioritized for years. As a 4 person team, we rebuilt the go-to-market motion - redesigning and training on pricing methodologies, training 30+ sales teams on consultative strategies, and leading cross-functional coordination across dozens of teams. This has resulted in substantial growth rates for 4 years in a row, alongside brag-worthy profitability figures.",
     category: "GTM & Growth"
   },
   {
@@ -19,7 +19,7 @@ export const IMPACT_HIGHLIGHTS: ImpactHighlight[] = [
     metric: "500+",
     metricLabel: "Enabled Peers",
     headline: "Turned product knowledge into a company-wide capability.",
-    story: "Solo-built and deployed a Custom GPT chatbot grounded in internal product documentation, rate tables, and process guides — writing the reference material myself and engineering prompt routing to surface accurate, department-specific answers instead of generic ones. Combined with custom product artifacts, it empowered 500+ employees to clearly explain our value proposition and simplify complex pricing conversations with external partners.",
+    story: "Solo-built and deployed a Custom GPT chatbot grounded in internal product documentation, rate tables, and process guides — writing the reference material myself and engineering prompt routing to surface accurate, department-specific answers instead of generic ones. Combined with the management of a centralized mailbox, 500+ employees have been empowered to clearly explain our value proposition and simplify complex conversations with external partners.",
     category: "AI & Enablement"
   },
   {
@@ -125,14 +125,14 @@ export const CAREER_TIMELINE: Experience[] = [
     location: "Denver, CO (Remote)",
     bullets: [
       "Drive cross-functional GTM execution across 30+ teams — including Legal, Finance, Engineering, Sales, and Actuarial — aligning stakeholders and accelerating commercial growth in a complex, matrixed organization.",
-      "Achieved 73% YoY product membership growth by rebuilding the go-to-market strategy from the ground up: redesigning pricing methodologies, building stakeholder alignment frameworks, and coordinating execution across 14+ markets.",
+      "As a 4 person team, achieved 73% YoY product membership growth by rebuilding the go-to-market strategy from the ground up: redesigning pricing methodologies, building stakeholder alignment frameworks, and coordinating execution across 14+ markets.",
       "Report on operational risk, KPI performance, and strategic progress to senior leadership, surfacing market-specific gaps and driving adoption of best practices across 14+ markets.",
       "Deeply understand customer needs through research, feedback, analytics, and market insights, translating those findings into product opportunities."
     ]
   },
   {
     company: "Elevance Health",
-    title: "Product Manager",
+    title: "Change Manager",
     dates: "September 2022 – November 2025",
     location: "Denver, CO (Remote)",
     bullets: [
@@ -150,7 +150,8 @@ export const CAREER_TIMELINE: Experience[] = [
     bullets: [
       "Managed a rapidly growing, $15M+ block of business in the Colorado market, which doubled in scale during tenure, while exceeding profitability targets through data-informed pricing and continuous competitive analysis.",
       "Caught a systemic pharmacy claims underpricing flaw in a third-party predictive risk model that no one else, internal or external, had caught first — independently investigated 20+ affected cases, quantified the financial exposure, and escalated a formal analysis directly to the vendor, who confirmed the issue and shipped a patch.",
-      "Built a cross-functional broker tracking and evaluation framework organically adopted across the company and embedded into renewal strategy workflows."
+      "Built a cross-functional broker tracking and evaluation framework organically adopted across the company and embedded into renewal strategy workflows.",
+      "Trained sales executives, support teams, and other underwriters in ABF-focused concepts — acting as a funding solutions expert and assisting with in-depth discussions with broker partners."
     ]
   },
   {
