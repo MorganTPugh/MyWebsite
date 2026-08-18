@@ -147,7 +147,7 @@ export const CAREER_TIMELINE: Experience[] = [
     bullets: [
       "Managed a rapidly growing, $15M+ block of business in the Colorado market, which doubled in scale during tenure, while exceeding profitability targets through data-informed pricing and continuous competitive analysis.",
       "Caught a systemic pharmacy claims underpricing flaw in a third-party predictive risk model that no one else, internal or external, had caught first — independently investigated 20+ affected cases, quantified the financial exposure, and escalated a formal analysis directly to the vendor, who confirmed the issue and shipped a patch.",
-      "Built a cross-functional broker tracking and evaluation framework organically adopted across the company and embedded into renewal strategy workflows.",
+      "Built a broker tracking and evaluation framework that informed renewal strategies, negotiations, and partner relationship management, enhancing client retention and experience.",
       "Trained sales executives, support teams, and other underwriters in ABF-focused concepts — acting as a funding solutions expert and assisting with in-depth discussions with broker partners."
     ]
   },
