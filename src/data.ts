@@ -136,7 +136,7 @@ export const CAREER_TIMELINE: Experience[] = [
       "Spearheaded post-sale process modernization initiative saving ~1 hour per sold case for 80+ employees across 28 markets by leading DocuSign automation and complete documentation redesign.",
       "Contributed to the go-to-market strategy for level-funded product across 14 markets, supporting pricing methodology redesign, sales training, competitive positioning, and customer experience improvements.",
       "Built and managed company-wide support infrastructure (mailbox + custom AI chatbot) enabling 400+ employees to conduct expert-level product conversations with external broker partners.",
-      "Led a broader AI-assisted competitive intelligence effort — including a multi-year analysis of competitor 10-K filings alongside other market and pricing data — synthesizing findings into executive-ready strategy and contract negotiation recommendations."
+      "Ran an attrition analysis across 100 terminated accounts — cleaning and reclassifying the underlying data, then presenting findings to leadership, who built training and communication action plans from the recommendations."
     ]
   },
   {
