@@ -121,15 +121,15 @@ export const CAREER_TIMELINE: Experience[] = [
     dates: "November 2025 – Present",
     location: "Denver, CO (Remote)",
     bullets: [
-      "Drive cross-functional GTM execution across 30+ teams — including Legal, Finance, Engineering, Sales, and Actuarial — aligning stakeholders and accelerating commercial growth in a complex, matrixed organization.",
-      "As a 4 person team, achieved 73% YoY product membership growth by rebuilding the go-to-market strategy from the ground up: redesigning pricing methodologies, building stakeholder alignment frameworks, and coordinating execution across 14+ markets.",
-      "Report on operational risk, KPI performance, and strategic progress to senior leadership, surfacing market-specific gaps and driving adoption of best practices across 14+ markets.",
-      "Deeply understand customer needs through research, feedback, analytics, and market insights, translating those findings into product opportunities."
+      "As a 4-person team, achieved 73% YoY product membership growth by rebuilding the go-to-market strategy, transforming pricing methodologies, building tools across departments, process improvements, and sales enablement across 14+ markets.",
+      "Built the organization's competitive intelligence model, benchmarking pricing, offerings, and GTM against national competitors, and presented it to leadership. This became the strategy document that drove changes across all departments.",
+      "Blocked a proposed expansion into a new state market by presenting a data-backed analysis including provider-cost structures, chronic-illness prevalence, claims volatility data and physician density - preventing a margin loss leadership had not priced in.",
+      "Automated the data gathering and file preparation behind account renewals with a ChatGPT and Power Automate workflow, adopted company-wide and saving analysts hundreds of hours annually."
     ]
   },
   {
     company: "Elevance Health",
-    title: "Business Change Manager",
+    title: "Change Manager",
     dates: "September 2022 – November 2025",
     location: "Denver, CO (Remote)",
     bullets: [
@@ -140,7 +140,7 @@ export const CAREER_TIMELINE: Experience[] = [
     ]
   },
   {
-    company: "Anthem",
+    company: "Elevance Health",
     title: "Lead Risk & Underwriting Analyst",
     dates: "November 2019 – September 2022",
     location: "Denver, CO",
