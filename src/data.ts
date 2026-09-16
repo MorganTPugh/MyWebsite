@@ -16,10 +16,10 @@ export const IMPACT_HIGHLIGHTS: ImpactHighlight[] = [
     category: "Process & Change Management"
   },
   {
-    metric: "500+",
+    metric: "400+",
     metricLabel: "Enabled Peers",
     headline: "Turned product knowledge into a company-wide capability.",
-    story: "Solo-built and deployed a Custom GPT chatbot grounded in internal product documentation, rate tables, and process guides — writing the reference material myself and engineering prompt routing to surface accurate, department-specific answers instead of generic ones. Combined with the management of a centralized mailbox, 500+ employees have been empowered to clearly explain our value proposition and simplify complex conversations with external partners.",
+    story: "Solo-built and deployed a Custom GPT chatbot grounded in internal product documentation, rate tables, and process guides — writing the reference material myself and engineering prompt routing to surface accurate, department-specific answers instead of generic ones. Combined with the management of a centralized mailbox, 400+ employees have been empowered to clearly explain our value proposition and simplify complex conversations with external partners.",
     category: "AI & Enablement"
   },
   {
@@ -129,18 +129,18 @@ export const CAREER_TIMELINE: Experience[] = [
   },
   {
     company: "Elevance Health",
-    title: "Change Manager",
+    title: "Business Change Manager",
     dates: "September 2022 – November 2025",
     location: "Denver, CO (Remote)",
     bullets: [
       "Spearheaded post-sale process modernization initiative saving ~1 hour per sold case for 80+ employees across 28 markets by leading DocuSign automation and complete documentation redesign.",
       "Contributed to the go-to-market strategy for level-funded product across 14 markets, supporting pricing methodology redesign, sales training, competitive positioning, and customer experience improvements.",
-      "Built and managed company-wide support infrastructure (mailbox + custom AI chatbot) enabling 500+ employees to conduct expert-level product conversations with external broker partners.",
+      "Built and managed company-wide support infrastructure (mailbox + custom AI chatbot) enabling 400+ employees to conduct expert-level product conversations with external broker partners.",
       "Led a broader AI-assisted competitive intelligence effort — including a multi-year analysis of competitor 10-K filings alongside other market and pricing data — synthesizing findings into executive-ready strategy and contract negotiation recommendations."
     ]
   },
   {
-    company: "Elevance Health",
+    company: "Anthem",
     title: "Lead Risk & Underwriting Analyst",
     dates: "November 2019 – September 2022",
     location: "Denver, CO",
